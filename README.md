@@ -907,7 +907,7 @@ CJK 字符等地都没有大规模使用粗体汉字的情况，并且缺乏原�
 Markdown：
 
 Markdown 的粗体叫做 [强烈强调](https://spec.commonmark.org/0.30/#emphasis-and-strong-emphasis)，
-这是从 [HTML <strong> 元素](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/strong)
+这是从 [HTML \<strong> 元素](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/strong)
 而来的叫法，不过中文语境通常称为粗体。
 
 备注：HTML 的 `<strong>` 和 `<b>` 元素，在默认情况下均能产生相同的粗体视觉效果，为什么分成两个，
@@ -915,7 +915,7 @@ Markdown 的粗体叫做 [强烈强调](https://spec.commonmark.org/0.30/#emphas
 应该使用的粗体强调语义，而 `<b>` 元素一种等价于 CSS 的文字样式。在 HTML 与 CSS 分离主义的今天，
 优先选择 `<strong>` 是合理的。
 
-[^84228]: WHATWG, [_Why are some presentational elements like <b>, <i> and <small> still included?_](https://web.archive.org/web/20140801184228/http://wiki.whatwg.org/wiki/FAQ#Why_are_some_presentational_elements_like_.3Cb.3E.2C_.3Ci.3E_and_.3Csmall.3E_still_included.3F), WHATWG, 2014-. (参照 2023-09-13).
+[^84228]: WHATWG, [_Why are some presentational elements like \<b>, \<i> and \<small> still included?_](https://web.archive.org/web/20140801184228/http://wiki.whatwg.org/wiki/FAQ#Why_are_some_presentational_elements_like_.3Cb.3E.2C_.3Ci.3E_and_.3Csmall.3E_still_included.3F), WHATWG, 2014-. (参照 2023-09-13).
 
 Markdown 的粗体使用星号 `**` 或下划线 `__` 作为标记，比如：
 
@@ -947,7 +947,7 @@ CJK 字符等地都没有大规模使用斜体汉字的情况，并且缺乏原�
 Markdown：
 
 Markdown 的斜体叫做 [强调](https://spec.commonmark.org/0.30/#emphasis-and-strong-emphasis)，
-这是从 [HTML <em> 元素](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/em)
+这是从 [HTML \<em> 元素](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/em)
 而来的叫法，不过中文语境通常称为斜体。
 
 备注：HTML 的 `<em>` 和 `<i>` 元素，在默认情况下均能产生相同的斜体视觉效果，为什么分成两个，
