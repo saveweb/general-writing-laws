@@ -3,13 +3,11 @@
 ```yaml
 标题: 通用写作律法
 创建时间: 2023-08-26
-版本: 0.0.24-beta
+版本: 0.0.25-beta
 ```
 
 《<ruby>通用写作律法<rp>(</rp><rt>General Writing Laws</rt><rp>)</rp></ruby>》是由
 [Save The Web Project][] 设计的开放律法（标准），后文简称为《律法》。
-
-[Save The Web Project]: https://github.com/saveweb
 
 《律法》有多种设想的使用场景，分别是：
 
@@ -50,8 +48,6 @@ Full support for other writing system, and _General Writing Laws_ translations a
 ## 简介
 
 《律法》是为了将各种书写规范模块化，而诞生的规则，借鉴了一些 [BEP 0000][]（BitTorrent 增强建议索引）的设计。
-
-[BEP 0000]: https://www.bittorrent.org/beps/bep_0.html
 
 并且《律法》兼容多种书写系统，不仅仅是中文主体，而是要打造一套各种书写系统都通用的写作规则，
 并且减少特例、例外的情况，让规范简单易懂。
@@ -96,9 +92,13 @@ GWLM 0 是收录通用写作律法模块的清单，会收录所有的 GWLM（Ge
 
 | 序号                | 标题                                     |
 | ------------------- | ---------------------------------------- |
+| [15][gwlm-15]       | [纯文本][gwlm-15]                        |
+| [16][gwlm-16]       | [富文本][gwlm-16]                        |
 | [18][gwlm-18]       | [简体中文标点符号修补][gwlm-18]          |
 | [15834][gwlm-15834] | [简体中文标点符号用法模块化][gwlm-15834] |
 
+[gwlm-15]: #gwlm-15-纯文本
+[gwlm-16]: #gwlm-16-富文本
 [gwlm-18]: #gwlm-18-简体中文标点符号修补
 [gwlm-15834]: #gwlm-15834-简体中文标点符号用法模块化
 
@@ -266,7 +266,7 @@ GWLM 0 是收录通用写作律法模块的清单，会收录所有的 GWLM（Ge
 
 4.  按照「书写系统环境」的语言填写所有的标点符号。
 
-    > apple是乔布斯传《Steve Jobs》中出现过的词语。
+        apple是乔布斯传《Steve Jobs》中出现过的词语。
 
 ### GWLM 2-2 词间距修补
 
@@ -317,10 +317,8 @@ GWLM 0 是收录通用写作律法模块的清单，会收录所有的 GWLM（Ge
 
 +   其他语言待编写。
 
-示例：
-
-> 我听说过« Beispiel in Frankreich » «Beispiel in der Schweiz» »Beispiel in Deutschland und Österreich«
-> 《十万个为什么》『吾輩は猫である』_Steve Jobs_ 这些书名。
+示例：我听说过« Beispiel in Frankreich » «Beispiel in der Schweiz» »Beispiel in Deutschland und Österreich«
+《十万个为什么》『吾輩は猫である』_Steve Jobs_ 这些书名。
 
 分别是法文、瑞士、德国／奥地利、中文、日文和英文的书名号表示方式。[^53627]
 
@@ -341,15 +339,15 @@ GWLM 0 是收录通用写作律法模块的清单，会收录所有的 GWLM（Ge
 使用语言来描述语言，就会涉及到 [使用与提及的区别](https://en.wikipedia.org/wiki/Use–mention_distinction)
 问题，就像下面的笑话一样：
 
-> 甲：如何设置壁纸？
->
-> 乙：设置个性化。
->
-> 甲：我就是不知道如何设置个性化，才询问，你回答这个对我没有用。
->
-> 乙：进入「设置」，点击「个性化」。
->
-> 甲：啊？
+    甲：如何设置壁纸？
+
+    乙：设置个性化。
+
+    甲：我就是不知道如何设置个性化，才询问，你回答这个对我没有用。
+
+    乙：进入「设置」，点击「个性化」。
+
+    甲：啊？
 
 所以现在大多数语言在提及某个词语时，使用引号、斜体等方式，标记被提及而不是在使用的词语，
 是比较常用的方式。（但过度使用可能会显得迂腐。）
@@ -374,9 +372,9 @@ GWLM 0 是收录通用写作律法模块的清单，会收录所有的 GWLM（Ge
 
 理论上出现关于数学的内容，都需要使用当地的语言的标点符号，比如：
 
-> 元素依次为 1、3、4、9、12、16、27……
+    元素依次为 1、3、4、9、12、16、27……
 
-> The elements are 1, 3, 4, 9, 12, 16, 27, …
+    The elements are 1, 3, 4, 9, 12, 16, 27, …
 
 但是间隔的宽度能看到明显差异，在常规字体自动排版的情况下，顿号的宽度是全角（一个汉字宽度），
 而西式逗号与空格的宽度加起来仅有半角（半个汉字宽度），这可能会导致顿号排出来的数字不利于数学内容展示。
@@ -389,19 +387,19 @@ GWLM 0 是收录通用写作律法模块的清单，会收录所有的 GWLM（Ge
 
 1.  数组使用西式写法。
 
-    > 元素依次为 1, 3, 4, 9, 12, 16, 27, …，然后……
+    像下面这样，省略号也要使用西式省略号。但数组外部，比如省略号后的逗号，依然使用「书写系统环境」的标点符号：
 
-    像这样，省略号也要使用西式省略号。但数组外部，比如省略号后的逗号，依然使用「书写系统环境」的标点符号。
+        元素依次为 1, 3, 4, 9, 12, 16, 27, …，然后……
 
 2.  多个式子横排时，之间的标点符号使用西式。
 
-    > 假设 a = 1, b = 2，那么……
+        假设 a = 1, b = 2，那么……
 
-    > 假设 a = 1; b = 2，那么……
+        假设 a = 1; b = 2，那么……
 
 3.  式子单独为一行时，居中并使用西式句点结尾。
 
-    > <p align="center">a × b = 10c.</p>
+    <p align="center">a × b = 10c.</p>
 
 ### GWLM 2-8 专有名词修补
 
@@ -439,149 +437,7 @@ GWLM 0 是收录通用写作律法模块的清单，会收录所有的 GWLM（Ge
 +   简体中文以《[GB 3100—1993 国际单位制及其应用][]》作为国际单位用法参考。
 +   繁体中文以《[重訂標點符號手冊][]》作为标点符号用法参考。
 
-[GB/T 15834—2011 标点符号用法标准]: http://www.moe.gov.cn/ewebeditor/uploadfile/2015/01/13/20150113091548267.pdf
-[GB 3100—1993 国际单位制及其应用]: https://zh.wikisource.org/zh/GB_3100-1993_国际单位制及其应用
-[重訂標點符號手冊]: https://language.moe.gov.tw/001/Upload/FILES/SITE_CONTENT/M1/HAU/haushou.htm
-
 其他地区的书写系统基本没有硬性规定的正字法、标点符号用法标准，可以使用芝加哥手册等知名的标准。
-
-<!--
-### GWLM 3-0：尊重产品名词等专有名词的书写规范。[^ccg_108]
-
-    [^ccg_108]: sgalal, 《[關於中文與英文、中文與數字間添加間距的疑問 · Issue #108 · sparanoid/chinese-copywriting-guidelines](https://github.com/sparanoid/chinese-copywriting-guidelines/issues/108)》, GitHub, 2020-01-27. (参照 2023-08-27).
-
-    产品名词可以参考官方网站、印刷品或者含有名称的地方，然后检查间距或书写情况，如果官方的使用混乱，
-    视作没有规范。
-
-    没有作者定义的专有名词，比如「维生素C」「U盘」「USBフラッシュドライブ」这类翻译而来的专有名词，
-    视作没有规范。
-    -->
-
-<!--
-+   GWLM 3-1：各书写系统的写作方法在能在片段环境中完整生效，例外：
-
-    +   GWLM 3-1-1：句首大写。
-    +   -->
-
-<!-- +   GWLM 3-2：片段环境会影响首尾有成对的符号，例外：
-
-    +   GWLM 3-2-1：括号。
-
-    +   GWLM 3-2-2：引号。
-
-    +   GWLM 3-2-4：书名号（包括使用斜体标示书名）。 -->
-
-<!--
-+   GWLM 3-4：全角与半角字符之间需要增加空格，例外：
-
-    +   GWLM 3-4-1：全角阿拉伯数字。
-
-    +   GWLM 3-4-2：全角标点符号，例如 ， 。 ； 《 等。
-
-    +   GWLM 3-4-4：全角特殊符号，例如 ％ ＊ ￥ ／ 等。
--->
-<!--
-+   GWLM 3-6：CJK 标点符号替换：
-
-    +   GWLM 3-6-1：替换「简体中文的弯引号」为「全角直角引号」。
-
-        | 原始  | Unicode  | 修改后 | Unicode  |
-        | :---: | :------: | :----: | :------: |
-        |   “   | `U+201C` |   「   | `U+300C` |
-        |   ”   | `U+201D` |   」   | `U+300D` |
-        |   ‘   | `U+2018` |   『   | `U+300E` |
-        |   ’   | `U+2019` |   』   | `U+300F` |
-
-    +   GWLM 3-6-2：替换「半角间隔号」为「全角间隔号」。
-
-        | 原始  | Unicode  | 修改后 | Unicode  |
-        | :---: | :------: | :----: | :------: |
-        |   /   | `U+002F` |   ／   | `U+FF0F` |
-
-    +   GWLM 3-6-4：替换「CJK 通用全角括号」为「英文半角括号」。
-
-        | 原始  | Unicode  | 修改后 | Unicode  |
-        | :---: | :------: | :----: | :------: |
-        |  （   | `U+FF08` |   (    | `U+0028` |
-        |  ）   | `U+FF09` |   )    | `U+0029` |
-
-    +   GWLM 3-6-8：替换「中日通用全角逗号」为「英文的半角逗号」。
-
-        | 原始  | Unicode  | 修改后 | Unicode  |
-        | :---: | :------: | :----: | :------: |
-        |  ，   | `U+FF0C` |   ,    | `U+002C` |
-
-    +   GWLM 3-6-16：替换「CJK 通用全角句号」为「CJK 通用半角句号」。
-
-        | 原始  | Unicode  | 修改后 | Unicode  |
-        | :---: | :------: | :----: | :------: |
-        |  。   | `U+3002` |   ｡    | `U+FF61` |
-
-    +   GWLM 3-6-32：替换「CJK 通用全角句号」为「英文的半角句号」。
-
-        | 原始  | Unicode  | 修改后 | Unicode  |
-        | :---: | :------: | :----: | :------: |
-        |  。   | `U+3002` |   .    | `U+002E` |
-
-    +   GWLM 3-6-64：替换「全角单层直角引号」为「半角单层直角引号」。
-
-        | 原始  | Unicode  | 修改后 | Unicode  |
-        | :---: | :------: | :----: | :------: |
-        |  「   | `U+300C` |   ｢    | `U+FF62` |
-        |  」   | `U+300D` |   ｣    | `U+FF63` |
--->
-
-<!--
-备注：启用 GWLM 3-2 表示同时启用了 GWLM 3, GWLM 3-2；
-启用 GWLM 3-4-7，就表示同时启用了 GWLM 3, GWLM 3-4, GWLM 3-4-1, GWLM 3-4-2, GWLM 3-4-4，
-原理是部分模块使用 1, 2, 4, 8… 这样的序列递增，其实是二进制的位关系，所以可以相加。
-
-| 十进制 | 二进制 | 含义（启用的模块） |
-| ------ | ------ | ------------------ |
-| 1      | 1      | 1                  |
-| 2      | 10     | 2                  |
-| 3      | 11     | 1, 2               |
-| 4      | 100    | 4                  |
-| 5      | 101    | 1, 4               |
-| 6      | 110    | 1, 2               |
-| 7      | 111    | 1, 2, 4            |
-
-GWLM 3-6-1 与 GWLM 3-7-1 的结果看起来相同，当其作用的领域不同。GWLM 3-6 作用于 CJK 的标点符号，
-即中日韩统一表意文字的标点符号。而 GWLM 3-7 作用于英文的标点符号。
--->
-
-<!-- ### 示例
-
-下面是启用一些模块后的效果：
-
-| 启用的模块                     | 效果               | 效果                           |
-| ------------------------------ | ------------------ | ------------------------------ |
-| 原始                           | 用户打开qq音乐     | apple在传记steve jobs          |
-| GWLM 3                         | 用户打开qq音乐。   | apple在传记《steve jobs》。    |
-| GWLM 3-0                       | 用户打开QQ音乐。   | apple在传记《Steve Jobs》。    |
-| GWLM 3-1                       | 用户打开Qq音乐。   | Apple在传记《Steve jobs》。    |
-| GWLM 3-2                       | 用户打开qq音乐。   | apple在传记<i>steve jobs</i>。 |
-| GWLM 3-4                       | 用户打开 qq 音乐。 | apple 在传记《 steve jobs 》。 |
-| GWLM 3-4-3                     | 用户打开 qq 音乐。 | apple 在传记《steve jobs》。   |
-| GWLM 3-2, GWLM 3-4-3           | 用户打开 qq 音乐。 | apple 在传记 _steve jobs_。    |
-| GWLM 3-0, GWLM 3-2, GWLM 3-4-3 | 用户打开 QQ音乐。  | apple 在传记 _Steve Jobs_。    |
-
----
-
-如果更改模块的排序，也会导致优先级改变，比如：
-
-| 启用的模块         | 效果               |                              |
-| ------------------ | ------------------ | ---------------------------- |
-| 原始               | 用户打开qq音乐     | apple在传记steve jobs        |
-| GWLM 3             | 用户打开qq音乐。   | apple在传记《steve jobs》。  |
-| GWLM 3-0           | 用户打开QQ音乐。   | apple在传记《Steve Jobs》。  |
-| GWLM 3-4           | 用户打开 qq 音乐。 | apple 在传记《Steve Jobs》   |
-| GWLM 3-0, GWLM 3-4 | 用户打开 QQ音乐。  | apple 在传记《Steve Jobs》。 |
-| GWLM 3-4, GWLM 3-0 | 用户打开 QQ 音乐。 | apple 在传记《Steve Jobs》。 |
-
----
-
-启用 GWLM 3-2 后，如果提到了不同书写系统的作品名，那么需要使用当地书写系统的书名表达方式： -->
 
 ## GWLM 4 兼容性
 
@@ -594,8 +450,6 @@ GWLM 3-6-1 与 GWLM 3-7-1 的结果看起来相同，当其作用的领域不同
 
 《[中文文案排版指北][]》是相当知名的中文文案、排版方案，可以通过启用部分《律法》模块来兼容《指北》，
 具体需要启用 GWLM 2-1、GWLM 3、GWLM 2-8、GWLM 2-2、GWLM 2-3、GWLM 2-9、GWLM 18-2。
-
-[中文文案排版指北]: https://github.com/sparanoid/chinese-copywriting-guidelines
 
 《中文技术文档的写作规范》（ruanyf/document-style-guide）是阮一峰编写的中文技术文档排版方案，
 可以通过启用部分《律法》模块来兼容《中文技术文档的写作规范》，具体需要启用
@@ -614,9 +468,7 @@ GWLM 2-1、GWLM 3、GWLM 2-8、GWLM 2-2、GWLM 2-3、GWLM 2-9、GWLM 8-6
 
 [^ccg_47]: CatTail, 《[如何处理表情文本 · Issue #47 · sparanoid/chinese-copywriting-guidelines](https://github.com/sparanoid/chinese-copywriting-guidelines/issues/47)》, GitHub, 2016-10-01. (参照 2023-08-27).
 
-> 今天出去 🛒，身上的 💰 竟然掉了，非常的 😫
->
-> _(GWLM 3-4, GWLM 5)_
+今天出去 🛒，身上的 💰 竟然掉了，非常的 😫
 
 ### 假借文字表情
 
@@ -649,9 +501,7 @@ GWLM 2-1、GWLM 3、GWLM 2-8、GWLM 2-2、GWLM 2-3、GWLM 2-9、GWLM 8-6
 
 Emoji 被视作半角字符，并且连续使用时，Emoji 之间也需要有空格：
 
-> 🍣 🍤 🍙 🍘 这些料理真好吃！
->
-> _(GWLM 3-4, GWLM 5)_
+🍣 🍤 🍙 🍘 这些料理真好吃！
 
 ## GWLM 6 暂定
 
@@ -665,20 +515,18 @@ Emoji 被视作半角字符，并且连续使用时，Emoji 之间也需要有�
 
 ### GWLM 8-0 多级标题概述
 
-文字作品有许多种结构，现在流行的是树状结构，比如下面的大纲演示：
+文字作品有许多种结构，现在流行的是树状结构，比如下面的《魔法从入门到放弃》大纲演示：
 
-> 《魔法从入门到放弃》
->
-> +   前言
-> +   关键词
-> +   1 魔法的原理
->     +   1.1 魔法与术式
->     +   1.2 个人现实
->     +   1.3 相信的心就是你的魔法
->     +   1.4 ……
-> +   2 试着使用魔法吧
->     +   2.1 魔道具挑选指南
->     +   2.2 ……
++   前言
++   关键词
++   1 魔法的原理
+    +   1.1 魔法与术式
+    +   1.2 个人现实
+    +   1.3 相信的心就是你的魔法
+    +   1.4 ……
++   2 试着使用魔法吧
+    +   2.1 魔道具挑选指南
+    +   2.2 ……
 
 ```mermaid
 ---
@@ -710,15 +558,15 @@ A1 --> B4 --> C5
 
 许多书籍、论文以及技术文档都是类似的结构，这类结构会让文字作品出现多级标题：
 
-> 1.  一级标题《魔法从入门到放弃》
-> 2.  二级标题〈魔法的原理〉
-> 3.  三级标题〈相信的心就是你的魔法〉
+1.  一级标题《魔法从入门到放弃》
+2.  二级标题〈魔法的原理〉
+3.  三级标题〈相信的心就是你的魔法〉
 
 或者：
 
-> 1.  主标题《魔法从入门到放弃》
-> 2.  一级标题〈魔法的原理〉
-> 3.  二级标题〈相信的心就是你的魔法〉
+1.  主标题《魔法从入门到放弃》
+2.  一级标题〈魔法的原理〉
+3.  二级标题〈相信的心就是你的魔法〉
 
 「一级标题、二级标题、三级标题、……」或「根标题、一级标题、二级标题、……」，
 这些排列方法都只是代号，没有本质区别。
@@ -730,22 +578,22 @@ A1 --> B4 --> C5
 
 如题，仅允许一个层级的标题，即：
 
-> 1.  一级标题《魔法从入门到放弃》
+1.  一级标题《魔法从入门到放弃》
 
 ### GWLM 8-2 仅允许二层标题
 
 如题，仅允许两个层级的标题，即：
 
-> 1.  一级标题《魔法从入门到放弃》
-> 2.  二级标题〈魔法的原理〉
+1.  一级标题《魔法从入门到放弃》
+2.  二级标题〈魔法的原理〉
 
 ### GWLM 8-3 仅允许三层标题
 
 如题，仅允许三个层级的标题，即：
 
-> 1.  一级标题《魔法从入门到放弃》
-> 2.  二级标题〈魔法的原理〉
-> 3.  三级标题〈相信的心就是你的魔法〉
+1.  一级标题《魔法从入门到放弃》
+2.  二级标题〈魔法的原理〉
+3.  三级标题〈相信的心就是你的魔法〉
 
 ### GWLM 8-4 仅允许四层标题
 
@@ -771,17 +619,157 @@ GWLM 15 将参考各种常用纯文本使用者的观点，整理出各种纯文
 
 ### GWLM 15-0 概述
 
-〔待续〕
+纯文本被用在 Usenet、IRC 和电子邮件等地，虽然现在流行使用 HTML 的电子邮件，但纯文本依然是可选项。
 
-Markdown、Org-mode
+纯文本往往就意味着无法直接使用缩进、链接和分割线等功能，只能使用大家约定的符号来定义一些效果。
 
-#### 电子邮件纯文本格式
+使用符号来约定效果，可能启发了 Setext、Org-mode 和 Markdown 等可读的标记语言。
 
-〔待续〕
+备注：现在寻找关于 Setext 历史的文章，几乎都是 Markdown 的历史里，浅显的提到 Setext，所以难以研究其历史。
 
-涉及 [RFC 2646][]。
+#### GWLM 15-1 引用
 
-[RFC 2646]: https://datatracker.ietf.org/doc/html/rfc2646
+简介：
+
+以下内容，主要来自维基百科的 [Posting style](https://en.wikipedia.org/wiki/Posting_style) 条目。
+
+因为互联网通信的异步性质，可能数年前的邮件组、论坛或新闻组仍有人回复，所以对主题中的部分内容进行引用就很重要，
+则能防止参与者忘记讨论的事，也能让回复者精准对各个内容进行回复。
+
+于是产生了下面这样的顶部引用方式：
+
+```email
+    下雨天的周末，可以和朋友去哪里？
+
+还没想好，需要再商量一下。
+```
+
+```email
+> 下雨天的周末，可以和朋友去哪里？
+
+还没想好，需要再商量一下。
+```
+
+分别是缩进和字符标记，之所以叫做顶部引用，是因为引用的内容靠上，除此之外还有底部引用：
+
+```email
+Subject: RE: Job
+
+
+哇！等等。我有一份给关键技术人员的报告，安排在 5:30 发送。
+你能把时间推迟一小时吗？
+丹尼
+
+
+-------- Original Message --------
+From: Jim <jim@example.com>
+Sent: Tuesday, October 16, 2007 9:40 AM
+To: Danny <danny@example.com>
+Subject: Job
+
+
+我将暂停邮件服务大约 30 分钟（从下午 5 点开始），因为要
+安装一些更新和重要修复。
+吉姆
+```
+
+底部引用常用在邮件回复中，也可以用字符标记来实现底部引用。
+
+缩进通常每层固定 4 个空格左右，字符标记有大于号「>」和竖线「|」两种，而前者更常用。
+
+在未正式发表的 RFC 1849 中，[4.3.2. Body Conventions](https://datatracker.ietf.org/doc/html/rfc1849#section-4.3.2)
+介绍了使用大于号来引用的用法。虽然 RFC 1849 并未正式在 1995 年发表，但广为流传，成为了 Usenet（新闻组）事实上的规范。
+
+之后在 RFC 2646 中详细的描述了大于号引用的细节，
+相关描述位于 [4.5. Quoting](https://datatracker.ietf.org/doc/html/rfc2646#section-4.5)。
+
+用法：
+
+使用尖括号，引用说过的话。
+
+Markdown：
+
+Markdown 缺乏整句高亮的手段，所以存在一些 Markdown 软件开发者以及用户，将块引用、代码块当作「高亮段落」使用。
+如果要使用「高亮段落」，应使用 [Admonitions][]（告诫）类 Markdown 扩展语法。
+
+[Admonitions]: #gwlm-16--admonitions
+
+Markdown 的引用效果，在许多「原教旨主义」版本中，比如 GitHub Flavored Markdown（[GFM][]），往往引用的颜色较浅，
+对于一些用户来说比较反直觉，这是因为 GFM 沿用了 Usenet 的引用回复用法，并使用了 format=flowed 的视觉效果。
+
+Markdown 的引用源自 Usenet 等纯文本领域，最初的用法也是在回复时，标明对方说的部分，所以狭义上，
+只有某人说过的话，才能使用 Markdown 的块引用。[^mt_0][^mt_1][^mt_2] 然后 Markdown 的块引用会生成 HTML
+`<blockquote>` 标签，这是一个语义标签。为了无障碍等语义合理，也应遵守上面提到的用法。
+
+[^mt_0]: Federico Poloni, [_Stop misuse of Markdown blockquotes for emphasis_](https://math.meta.stackexchange.com/q/25939), Mathematics Meta Stack Exchange, 2017-04-13. (参照 2023-09-15).
+[^mt_1]: Martin Sleziak, [_Is using blockquote for highlighting problematic?_](https://math.meta.stackexchange.com/q/23015), Mathematics Meta Stack Exchange, 2017-04-13. (参照 2023-09-15).
+[^mt_2]: stakx, [_Do we need a new Markdown formatting for indented / boxed text (for preambles, remarks / side notes, postscripts, footnotes, …)?_](https://meta.stackexchange.com/q/250415), Meta Stack Exchange, 2017-05-23. (参照 2023-09-15).
+
+format=flowed 功能的历史：
+
+format=flowed 是在 RFC 2646 [4.1. Generating Format=Flowed](https://datatracker.ietf.org/doc/html/rfc2646#section-4.5)
+上描述的功能，主要解决纯文本自动换行问题。
+
+比如下面原始状态的电子邮件片段：
+
+```email
+>>> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et.
+>> dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.
+> laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit.
+```
+
+在 Apple II 这台老电脑上，仅能显示 40 个字符宽度，所以就会变成这样：
+
+```email
+>>>Lorem ipsum dolor sit amet,
+consectetur adipiscing elit, sed do
+eiusmod tempor incididunt ut labore
+et.
+>>dolore magna aliqua. Ut enim ad
+minim veniam, quis nostrud
+exercitation ullamco.
+>laboris nisi ut aliquip ex ea
+commodo consequat. Duis aute irure
+dolor in reprehenderit.
+```
+
+当多重引用越来越多时，也就越来越难以阅读，所以 RFC 2646 描述的 format=flowed，这种自动解析、
+流动性（自适应宽度）的引用功能，就是加强纯文本的方案，这也影响了 Markdown 的严格换行功能。
+
+#### GWLM 15-2 链接
+
+简介：
+
+在 1982 年的 RFC 822 中，[3.4.6. BRACKETING CHARACTERS](https://datatracker.ietf.org/doc/html/rfc822#section-3.4.6)
+介绍了包围字符的用法，其中尖括号用来指示单机可用的情况，比如邮箱：
+
+    <Shared@Group.Arpanet>
+
+随后可能因为使用者挪动到了链接上，所以给链接添上尖括号成为了事实标准，并在 2005 年被编写到了 RFC 3986
+的 [附录 C](https://datatracker.ietf.org/doc/html/rfc3986#appendix-C) 中，建议使用引号或者空格等字符包裹 URI，
+其中最佳方案是尖括号。
+
+这么做能增加可读性，并能让读者清晰的知道什么地方是链接。
+
+用法：
+
+给链接（URL）的左右添加尖括号，其他 URI 比如 DOI 也可以：
+
+    <https://doi.org/10.1000/182>
+
+    <urn:doi:10.1000/1>
+
+Markdown：
+
+Markdown 跟 RFC 3986 提到的尖括号相似，然后会将：
+
+    <http://example.com/>
+
+转换成：
+
+    <a href="http://example.com/">http://example.com/</a>
+
+但是需要添加 `http://` `ftp://` 等协议前缀，否则就不会转换。
 
 ## GWLM 16 富文本
 
@@ -828,8 +816,6 @@ Markdown、Org-mode
 所以目前以无衬线字体为主，也许是个好主意。
 
 [^svssf]: Jakob Nielsen, [_Serif vs. Sans-Serif Fonts for HD Screens_](https://www.nngroup.com/articles/serif-vs-sans-serif-fonts-hd-screens/), Nielsen Norman Group, 2012-07-01. (参照 2023-09-13).
-
-[Steam 2023年8月 的硬件统计]: https://web.archive.org/web/20230911193245/https://store.steampowered.com/hwsurvey/Steam-Hardware-Software-Survey-Welcome-to-Steam
 
 然后等宽字体按需使用即可，比如涉及源代码、二／十六进制文件片段以及 ASCII 艺术的时候，
 通常不需要全局使用等宽字体。
@@ -1088,8 +1074,6 @@ Markdown 有两种标题标记，分别是：
 
     ATX 式标题源自亚伦·斯沃茨设想的 [atx 标记语言][]。尚不明确 atx 的含义，可能指「亚伦 TeX」。
 
-    [atx 标记语言]: https://web.archive.org/web/20040223210813/http://www.aaronsw.com/2002/atx/intro
-
     ```markdown
     # Test Title a1
 
@@ -1187,12 +1171,18 @@ foo\
 baz
 ```
 
+生成：
+
 ```html
 <p>foo<br />
 baz</p>
 ```
 
 一些写作者可能会这样断行，然后当作分段。不建议这么做，应确保 HTML 语义的完整、无歧义为优先，这样才能实现无障碍。
+
+### GWLM 16-?? Admonitions
+
+〔待续〕
 
 ### GWLM 16-?? 富文本的复合用法
 
@@ -1219,7 +1209,7 @@ Markdown 最初的开发者，以及许多兼容的渲染器都没怎么考虑�
 
 对链接特殊处理（一）：为链接的前后添加间距：
 
-> 埃佩克斯是位于 [北卡罗来纳州](#/) [韦克县](#/) 的一个镇，属于 [罗利](#/) [郊区](#/) 的一部份。
+埃佩克斯是位于 [北卡罗来纳州](#/) [韦克县](#/) 的一个镇，属于 [罗利](#/) [郊区](#/) 的一部份。
 
 ## GWLM 17 时间修补
 
@@ -1311,8 +1301,6 @@ Markdown 最初的开发者，以及许多兼容的渲染器都没怎么考虑�
 
 > 〇〇中学学生会会长。
 
-> 〇〇车站站体体积很大。
-
 > 列车车长。
 
 > 上海南站站。
@@ -1323,7 +1311,9 @@ Markdown 最初的开发者，以及许多兼容的渲染器都没怎么考虑�
 
 〔内容待填充〕
 
-ATM（自动取款机）有时为了标明其机器属性，也会使用 ATM 机（ATM machine），这样的拼写方式叫做 [RAS syndrome](https://en.wikipedia.org/wiki/RAS_syndrome)（redundant acronym syndrome, 冗余首字母缩写综合征），比如 HIV 病毒、LCD 显示器甚至是 IP 协议……
+ATM（自动取款机）有时为了标明其机器属性，也会使用 ATM 机（ATM machine），这样的拼写方式叫做
+[RAS syndrome](https://en.wikipedia.org/wiki/RAS_syndrome)（redundant acronym syndrome, 冗余首字母缩写综合征），
+比如 HIV 病毒、LCD 显示器甚至是 IP 协议……
 
 ## GWLM 15834 简体中文标点符号用法模块化
 
@@ -1339,8 +1329,6 @@ ATM（自动取款机）有时为了标明其机器属性，也会使用 ATM 机
 《GB/T 15834—2011 标点符号用法标准》属于推荐标准。即使是
 《[GB/T 1.1—2020 标准化工作导则第1部分 标准化文件的结构和起草规则][]》9.4.2.4，
 也没有遵守《GB/T 15834—2011》，将下划线当作了着重号。所以读作遵守，写作参考。
-
-[GB/T 1.1—2020 标准化工作导则第1部分 标准化文件的结构和起草规则]: http://www.zjsm.org/file/news/637231474274567101.pdf
 
 ### GWLM 15834-0
 
@@ -1745,8 +1733,6 @@ GWLM 15834-4-8 是替代《GB/T 15834—2011 标点符号用法标准》4.8 的�
     |  』   | `U+300F` | [Right White Corner Bracket](https://www.compart.com/en/unicode/U+300F)     |
     |   ｢   | `U+FF62` | [Halfwidth Left Corner Bracket][]                                           |
     |   ｣   | `U+FF63` | [Halfwidth Right Corner Bracket](https://www.compart.com/en/unicode/U+FF63) |
-
-    [Halfwidth Left Corner Bracket]: https://web.archive.org/web/20230531223705/https://compart.com/en/unicode/U+FF62
 
 +   GWLM 15834-4-8-3 基本用法
 
@@ -3026,3 +3012,17 @@ GWLM 15834-4-17 是替代《GB/T 15834—2011 标点符号用法标准》4.17 �
     <!-- 示例 7：和平协议签署之后…… -->
 
     > 《侦探已经，死了。》
+
+<!-- 存放引用式链接 -->
+
+[中文文案排版指北]: https://github.com/sparanoid/chinese-copywriting-guidelines
+[重訂標點符號手冊]: https://language.moe.gov.tw/001/Upload/FILES/SITE_CONTENT/M1/HAU/haushou.htm
+[atx 标记语言]: https://web.archive.org/web/20040223210813/http://www.aaronsw.com/2002/atx/intro
+[BEP 0000]: https://www.bittorrent.org/beps/bep_0.html
+[GB 3100—1993 国际单位制及其应用]: https://zh.wikisource.org/zh/GB_3100-1993_国际单位制及其应用
+[GB/T 1.1—2020 标准化工作导则第1部分 标准化文件的结构和起草规则]: http://www.zjsm.org/file/news/637231474274567101.pdf
+[GB/T 15834—2011 标点符号用法标准]: http://www.moe.gov.cn/ewebeditor/uploadfile/2015/01/13/20150113091548267.pdf
+[GFM]: https://github.github.com/gfm/
+[Halfwidth Left Corner Bracket]: https://web.archive.org/web/20230531223705/https://compart.com/en/unicode/U+FF62
+[Save The Web Project]: https://github.com/saveweb
+[Steam 2023年8月 的硬件统计]: https://web.archive.org/web/20230911193245/https://store.steampowered.com/hwsurvey/Steam-Hardware-Software-Survey-Welcome-to-Steam
