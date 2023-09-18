@@ -3,7 +3,7 @@
 ```yaml
 标题: 通用写作律法
 创建时间: 2023-08-26
-版本: 0.0.25-beta
+版本: 0.0.26-beta
 ```
 
 《<ruby>通用写作律法<rp>(</rp><rt>General Writing Laws</rt><rp>)</rp></ruby>》是由
@@ -176,7 +176,7 @@ GWLM 0 是收录通用写作律法模块的清单，会收录所有的 GWLM（Ge
 
 +   GWLM 1-?? 段落排版（段间距与行首缩进）
 
-    请参考〈[GWLM 16-3 段落排版（段间距与行首缩进）](#gwlm-16-3-段落排版段间距与行首缩进)〉小节。
+    请参考〈[GWLM 16-4 段落排版（段间距与行首缩进）](#gwlm-16-4-段落排版段间距与行首缩进)〉小节。
 
 ## GWLM 2 书写系统空间
 
@@ -210,11 +210,11 @@ GWLM 0 是收录通用写作律法模块的清单，会收录所有的 GWLM（Ge
         end
     ```
 
-2.  标示「外语」「作品名名」「数字」「计量单位符号」等「片段环境」。
+2.  标示「外语」「作品名」「数字」「计量单位符号」等「片段环境」。
 
     ```mermaid
     ---
-    title: "标示「外语」「作品名名」「数字」「计量单位符号」等「片段环境」"
+    title: "标示「外语」「作品名」「数字」「计量单位符号」等「片段环境」"
     ---
     flowchart TD
 
@@ -627,7 +627,7 @@ GWLM 15 将参考各种常用纯文本使用者的观点，整理出各种纯文
 
 备注：现在寻找关于 Setext 历史的文章，几乎都是 Markdown 的历史里，浅显的提到 Setext，所以难以研究其历史。
 
-#### GWLM 15-1 引用
+### GWLM 15-1 引用
 
 简介：
 
@@ -680,12 +680,16 @@ Subject: Job
 在未正式发表的 RFC 1849 中，[4.3.2. Body Conventions](https://datatracker.ietf.org/doc/html/rfc1849#section-4.3.2)
 介绍了使用大于号来引用的用法。虽然 RFC 1849 并未正式在 1995 年发表，但广为流传，成为了 Usenet（新闻组）事实上的规范。
 
-之后在 RFC 2646 中详细的描述了大于号引用的细节，
+之后在 RFC 2646（The Text/Plain Format Parameter）中详细的描述了大于号引用的细节，
 相关描述位于 [4.5. Quoting](https://datatracker.ietf.org/doc/html/rfc2646#section-4.5)。
+
+---
 
 用法：
 
 使用尖括号，引用说过的话。
+
+---
 
 Markdown：
 
@@ -704,6 +708,8 @@ Markdown 的引用源自 Usenet 等纯文本领域，最初的用法也是在回
 [^mt_0]: Federico Poloni, [_Stop misuse of Markdown blockquotes for emphasis_](https://math.meta.stackexchange.com/q/25939), Mathematics Meta Stack Exchange, 2017-04-13. (参照 2023-09-15).
 [^mt_1]: Martin Sleziak, [_Is using blockquote for highlighting problematic?_](https://math.meta.stackexchange.com/q/23015), Mathematics Meta Stack Exchange, 2017-04-13. (参照 2023-09-15).
 [^mt_2]: stakx, [_Do we need a new Markdown formatting for indented / boxed text (for preambles, remarks / side notes, postscripts, footnotes, …)?_](https://meta.stackexchange.com/q/250415), Meta Stack Exchange, 2017-05-23. (参照 2023-09-15).
+
+---
 
 format=flowed 功能的历史：
 
@@ -736,7 +742,7 @@ dolor in reprehenderit.
 当多重引用越来越多时，也就越来越难以阅读，所以 RFC 2646 描述的 format=flowed，这种自动解析、
 流动性（自适应宽度）的引用功能，就是加强纯文本的方案，这也影响了 Markdown 的严格换行功能。
 
-#### GWLM 15-2 链接
+### GWLM 15-2 链接
 
 简介：
 
@@ -745,11 +751,22 @@ dolor in reprehenderit.
 
     <Shared@Group.Arpanet>
 
-随后可能因为使用者挪动到了链接上，所以给链接添上尖括号成为了事实标准，并在 2005 年被编写到了 RFC 3986
-的 [附录 C](https://datatracker.ietf.org/doc/html/rfc3986#appendix-C) 中，建议使用引号或者空格等字符包裹 URI，
-其中最佳方案是尖括号。
+在 1994 年的 [_Uniform Resource Locators (URL)_](https://web.archive.org/web/20230902014616/https://www.w3.org/Addressing/URL/url-spec.txt)
+（草案），以及正式版 [RFC 1738](https://datatracker.ietf.org/doc/html/rfc1738) 中，万维网之父——蒂姆·伯纳斯-李，
+使用了尖括号来表示纯文本中的 URL，但有一些差异。前者作为附录的非强制标准，后者同样是建议：
 
-这么做能增加可读性，并能让读者清晰的知道什么地方是链接。
++   Uniform Resource Locators (URL)
+
+        <http://www.acl.lanl.gov/URI/archive/uri-archive.index.html>
+
++   RFC 1738
+
+        <URL:http://www.acl.lanl.gov/URI/archive/uri-archive.index.html>
+
+随后在 2005 年被编写到了 RFC 3986 的 [附录 C](https://datatracker.ietf.org/doc/html/rfc3986#appendix-C) 中，
+建议使用引号或者空格等字符包裹 URI，其中最佳方案是尖括号。
+
+---
 
 用法：
 
@@ -758,6 +775,8 @@ dolor in reprehenderit.
     <https://doi.org/10.1000/182>
 
     <urn:doi:10.1000/1>
+
+---
 
 Markdown：
 
@@ -770,6 +789,151 @@ Markdown 跟 RFC 3986 提到的尖括号相似，然后会将：
     <a href="http://example.com/">http://example.com/</a>
 
 但是需要添加 `http://` `ftp://` 等协议前缀，否则就不会转换。
+
+### GWLM 15-3 特殊符号
+
+简介：
+
+数学等对排版有复杂要求的情况，在纯文本中，经常不得不使用单行来表示，而 TeX 的写法。
+
+比如下面这些符号：
+
+| 符号     | 演示                             | 含义     |
+| -------- | -------------------------------- | -------- |
+| 插入记号 | `sum_{i=0}^{n-1} 2^i = 2^n - 1.` | 表示上标 |
+| 下划线   | `lim_{x --> 0} sin (x) / x`      | 表示下标 |
+
++   插入记号 `^`
+
+    插入记号的原型是打字机上的变音符，按下后会打印变音符，但打字机不会向后移动，之后再按下字母，
+    就能印出含有 `^` 声调的字母。
+
+    时间来到 ASCII 标准化的 1960 年代，BASIC 等编程语言开始使用 `^` 作为乘方符号，
+    比如 `3^5` 表示 3 × 3 × 3 × 3 × 3。[^31392]
+
+    然后排版软件 TeX 使用了 `^` 作为上标记号，可能。
+
+    随后 Textile 使用 `^` 作为上标用法，演示如：`^上标^`。[^27ttt]
+
+    接着 Markdown 扩展语法，比如脚注也借用了 Textile 的上标记号用法。
+
+    <!-- 用着借来的形状、借来的名称，最后 `^` 符号成为了独特的符号。 -->
+
+详细的数学符号在纯文本中的使用，可以参考 [_A Primer for Communicating Mathematics via Plain Text_][] 这篇文章。
+
+[_A Primer for Communicating Mathematics via Plain Text_]: https://cse.sc.edu/~fenner/latex-ASCII.pdf
+
+化学物质也能用纯文本表示，比如 [simplified molecular-input line-entry system][]（SMILES）是一种将分子模型转化为 ASCII
+文本的规则。比如二氧化碳的 SMILES 是 C(=O)=O
+
+[simplified molecular-input line-entry system]: https://en.wikipedia.org/wiki/Simplified_molecular-input_line-entry_system
+
+---
+
+用法：
+
+应该仅用于简介里提到的数学和化学领域，无法扩展到其他领域。
+
+---
+
+Markdown：
+
+Markdown 均不支持以上写法。
+
+### GWLM 15-4 特殊包裹符号
+
+简介：
+
+斜体、粗体等，都是西方常用的字体效果，即使纯文本不支持，也可以使用各种符号包裹文字，来强调这段内容的特殊性。
+
+比如下面这些符号：
+
+| 符号       | 演示                                       | 含义           |
+| ---------- | ------------------------------------------ | -------------- |
+| 星号       | `It was *absolutely* horrible.`            | 强调           |
+| 星号 × 2   | `where bolding uses **double asterisks**.` | 强调，表示粗体 |
+| 下划线     | `I had _nothing_ to do with it.`           | 强调，偏向斜体 |
+| 下划线 × 2 | `underlining uses __double underscores__.` | 强调，表示粗体 |
+| 短横线 × 2 | `It was --absolutely-- horrible.`          | 强调           |
+| 尖括号     | `They >completely< forgot me!`             | 强调，偏向斜体 |
+| 斜线       | `I stayed home and played /Halo/.`         | 强调，表示斜体 |
+| 短横线     | `-So horrible.-`                           | 表示删除线     |
+| 波浪线     | `~So horrible.~`                           | 表示删除线     |
+
+这些用法基本源自 Usenet，但没有标准化，具体的用法主要来自文字作者习惯。
+
+[^27ttt]: Cardigan Industries, [_Textile - A Humane Web Text Generator_](https://web.archive.org/web/20021226035527/http://textism.com/tools/textile/), Textism, 2002-12-26. (参照 2023-09-18).
+
+[^31392]: njuffa, [_Answer to "Why was the caret used for XOR instead of exponentiation?"_](https://softwareengineering.stackexchange.com/a/331392), Software Engineering Stack Exchange, 2016-09-19. (参照 2023-09-18).
+
+---
+
+用法：
+
+Usenet 以及后续发展的软件，影响了后来的标记语言，[MeatballWiki][] 整理了各种 Wiki 软件使用的标记语言，
+可以看到标记非常混乱，比如下划线在一些 Wiki 软件表示给文字添加下划线，但在另一些 Wiki 软件中表示斜体。
+
+[MeatballWiki]: http://meatballwiki.org/wiki/CharacterFormattingRules
+
+如果从用法数量来统计，那么有一定程度普遍性的用法如下：
+
+| 符号     | 演示                                       | 含义 |
+| -------- | ------------------------------------------ | ---- |
+| 下划线   | `I had _nothing_ to do with it.`           | 斜体 |
+| 星号 × 2 | `where bolding uses **double asterisks**.` | 粗体 |
+
+并且此用法兼容 Markdown，所以是一个易于读者理解的写法。
+
+---
+
+Markdown：
+
+详情请参考〈[GWLM 16-1-3 字重](#gwlm-16-1-3-字重)〉〈[GWLM 16-1-4 倾斜](#gwlm-16-1-4-倾斜)〉章节。
+
+### GWLM 15-5 ASCII 艺术
+
+简介：
+
+这里的 ASCII 艺术泛指一切「字符画」，包括但不限于 ASCII art、ANSI art 和颜文字。
+
+---
+
+用法：
+
+复杂的 ASCII 艺术对字体有要求，比如要求等宽字体，在 HTML 里展示时通常需要使用 \<pre>、\<code> 标签来包裹。
+
+---
+
+Markdown：
+
+通常使用代码块即可：
+
+```ascii_art
+                   _ _ _____        _
+    /\            (_|_)  __ \      | |
+   /  \   ___  ___ _ _| |  | | ___ | |_ ___
+  / /\ \ / __|/ __| | | |  | |/ _ \| __/ __|
+ / ____ \\__ \ (__| | | |__| | (_) | |_\__ \
+/_/    \_\___/\___|_|_|_____/ \___/ \__|___/
+```
+
+上面的是 [asciidots](https://github.com/aaronjanse/asciidots) 语言的标志。
+
+### GWLM 15-6 其他
+
+[签名块][] 是早期电子邮件、Usenet 常用的功能。通常是以短横线、短横线和空格组成分割线：
+
+[签名块]: https://en.wikipedia.org/wiki/Signature_block
+
+```usenet
+...orist it's an unnecessary optimization and a (to use your words)
+"performance hack", but I'm interested in a Real operating system ---
+not a research toy.
+
+-- 
+Brad Templeton, publisher, ClariNet Communications Corp.         in...@clari.net
+The net's #1 E-Newspaper (1,160,000 paid sbscrbrs.)  http://www.clari.net/brad/
+```
 
 ## GWLM 16 富文本
 
@@ -806,6 +970,8 @@ Markdown 跟 RFC 3986 提到的尖括号相似，然后会将：
 字体还可以根据衬线情况，被分为衬线与 [无衬线字体](https://zh.wikipedia.org/wiki/无衬线体)，
 无衬线字体还常被叫做黑体。
 
+---
+
 使用：
 
 通常衬线意味着装饰、古典，所以常用于引用古文以及文学，而无衬线适合作为警告标语、小型印刷品，
@@ -819,6 +985,8 @@ Markdown 跟 RFC 3986 提到的尖括号相似，然后会将：
 
 然后等宽字体按需使用即可，比如涉及源代码、二／十六进制文件片段以及 ASCII 艺术的时候，
 通常不需要全局使用等宽字体。
+
+---
 
 Markdown：
 
@@ -901,10 +1069,14 @@ Markdown 在使用 [内联代码](https://spec.commonmark.org/0.30/#code-spans)�
 字体的尺寸在矢量字体的时代，可以随意放大缩小。通常文字作品会用最大的字体作为一级标题，之后的级别依次变小，
 最后与正文的字体相当大小。
 
+---
+
 使用：
 
 大尺寸的字体作为强调或装饰使用，比如 [首字放大](https://zh.wikipedia.org/wiki/首字放大)，
 以及在论坛的富文本编辑器中，用大号的字体模仿 `<h2>`、`<h3>` 这样的标题使用。
+
+---
 
 Markdown：
 
@@ -922,6 +1094,8 @@ Markdown 本身没有对段落中的字体尺寸调整的标记，不过可以�
 字重（粗体）是一种字体形式，具有不同粗细的程度，现代字体的字重需要字体支持，如果没有原生支持，就会像斜体一样，
 依靠电脑自动化的生成，依靠偏移字形轮廓实现。
 
+---
+
 使用：
 
 CJK 字符等地都没有大规模使用粗体汉字的情况，并且缺乏原生粗体的汉字字体，所以不建议在富文本排版时使用。
@@ -930,6 +1104,8 @@ CJK 字符等地都没有大规模使用粗体汉字的情况，并且缺乏原�
 
 中英混排时，强调一段同时含有中英文字的情况时，可能是噩梦……因为既需要给汉字添加着重号（底部点符号），
 也要给西文添加粗体状态吧。如何混排使用强调，还需要进一步研究。
+
+---
 
 Markdown：
 
@@ -967,9 +1143,13 @@ __这是加粗的句子。__
 倾斜又分为狭义的倾斜字体和伪斜体，狭义的倾斜字体是本来就是斜体的字体，常见的西式文字都原生自带斜体的字体，
 而伪斜体是依靠电脑自动化的拉伸，让矩形的字形变成平行四边形的字形。
 
+---
+
 使用：
 
 CJK 字符等地都没有大规模使用斜体汉字的情况，并且缺乏原生斜体的汉字字体，所以不建议在富文本排版时使用。
+
+---
 
 Markdown：
 
@@ -1020,9 +1200,13 @@ The middle of this.
 The _middle_ of this.
 ```
 
+---
+
 使用：
 
 〔待续〕
+
+---
 
 Markdown：
 
@@ -1034,9 +1218,13 @@ Markdown：
 
 〔待续〕
 
+---
+
 使用：
 
 〔待续〕
+
+---
 
 Markdown：
 
@@ -1048,9 +1236,47 @@ Markdown：
 
 〔待续〕
 
+---
+
 使用：
 
 〔待续〕
+
+---
+
+Markdown：
+
+〔待续〕
+
+简介：
+
+〔待续〕
+
+---
+
+使用：
+
+〔待续〕
+
+---
+
+Markdown：
+
+〔待续〕
+
+#### GWLM 16-1-4 上标下标
+
+简介：
+
+〔待续〕
+
+---
+
+使用：
+
+〔待续〕
+
+---
 
 Markdown：
 
@@ -1062,9 +1288,13 @@ Markdown：
 
 标题通常是一段标记作品名称的字符串，通常是可读的，也存在使用无意义、单纯标号当作标题的情况。
 
+---
+
 使用：
 
 〔待续〕
+
+---
 
 Markdown：
 
@@ -1147,6 +1377,8 @@ Markdown 有两种标题标记，分别是：
 +   行首缩进：(3)
 +   行间距：a3 ~ a4、b3 ~ b4
 
+---
+
 使用：
 
 在出版物中，往往使用 A 型段落格式，因为这样更节约纸张，此时的「段间距」与「行间距」往往差距较小。
@@ -1158,6 +1390,8 @@ Markdown 有两种标题标记，分别是：
 
 历史：印刷术、打字机都大大影响了段落排版，其中打字机通常只能一行一行的移动，所以段间距往往直接空一行，
 这一习惯也一定程度影响到了现代。
+
+---
 
 Markdown：
 
@@ -1203,7 +1437,7 @@ Markdown 最初的开发者，以及许多兼容的渲染器都没怎么考虑�
 
 〔待续〕
 
----
+## GWLM 16-?? 其他内容
 
 暂定的规则，需要研究。
 
