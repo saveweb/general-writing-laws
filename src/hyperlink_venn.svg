@@ -1,0 +1,80 @@
+<svg viewBox="0,0,600,400" width="800" height="600" xmlns="http://www.w3.org/2000/svg"
+    xmlns:xlink="http://www.w3.org/1999/xlink"><svg width="600" height="350">
+
+        <!--
+sets = [
+    {sets: [0], label: "页面中的文本", size: 100, fill: "#222222"},
+    {sets: [1], label: "前往的页面（URI）", size: 100, fill: "#551A8B"},
+    {sets: [2], label: "锚元素", size: 100, fill: "#0000EE"},
+    {sets: [0, 1], size: 20, label: "链接"},
+    {sets: [0, 2], size: 20, label: "链接"},
+    {sets: [1, 2], size: 20, label: "链接"},
+    {sets: [0, 1, 2], size: 12, label: "链接"},
+]
+
+来源：
+https://github.com/benfred/venn.js/
+https://observablehq.com/@ccwang002/simple-venn-diagram-generator
+https://blog.liang2.tw/posts/2019/04/generate-venn-svg/
+-->
+
+        <style>
+            svg {
+                -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+                text-shadow: rgb(255, 255, 255) -2px -2px 4px, rgb(255, 255, 255) -2px 2px 4px,
+                    rgb(255, 255, 255) 2px -2px 4px, rgb(255, 255, 255) 2px 2px 4px;
+            }
+            /* 来源：https://stackoverflow.com/questions/15500894/background-color-of-text-in-svg/52596939#52596939 */
+        </style>
+
+        <g class="venn-area venn-circle" data-venn-sets="0">
+            <path style="fill-opacity: 0.25; fill: rgb(0, 0, 0);"
+                d="&#xA;M 231.903966122626 233.9728254818611 &#xA;m -101.0271745181389 0 &#xA;a 101.0271745181389 101.0271745181389 0 1 0 202.0543490362778 0 &#xA;a 101.0271745181389 101.0271745181389 0 1 0 -202.0543490362778 0" />
+            <text class="label" text-anchor="middle" dy=".35em" x="201" y="251" style="fill: rgb(34,34,34);">
+                <tspan x="201" y="251" dy="0.35em">页面中的文本</tspan>
+            </text>
+        </g>
+        <g class="venn-area venn-circle" data-venn-sets="1">
+            <path style="fill-opacity: 0.25; fill: rgb(85, 26, 139);"
+                d="&#xA;M 368.096033877374 233.9728254818611 &#xA;m -101.0271745181389 0 &#xA;a 101.0271745181389 101.0271745181389 0 1 0 202.0543490362778 0 &#xA;a 101.0271745181389 101.0271745181389 0 1 0 -202.0543490362778 0" />
+            <text class="label" text-anchor="middle" dy=".35em" x="398" y="251" style="fill: rgb(85, 26, 139);">
+                <tspan x="398" y="251" dy="0.35em">前往的页面（URI）</tspan>
+            </text>
+        </g>
+        <g class="venn-area venn-circle" data-venn-sets="2">
+            <path style="fill-opacity: 0.25; fill: rgb(0, 0, 238);"
+                d="&#xA;M 300.00021060737595 116.02717451813886 &#xA;m -101.0271745181389 0 &#xA;a 101.0271745181389 101.0271745181389 0 1 0 202.0543490362778 0 &#xA;a 101.0271745181389 101.0271745181389 0 1 0 -202.0543490362778 0" />
+            <text class="label" text-anchor="middle" dy=".35em" x="300" y="81" style="fill: rgb(0, 0, 238);">
+                <tspan x="300" y="81" dy="0.35em">锚元素</tspan>
+            </text>
+        </g>
+        <g class="venn-area venn-intersection" data-venn-sets="0_1">
+            <path style="fill-opacity: 0;"
+                d="&#xA;M 300 308.601373379365 &#xA;A 101.0271745181389 101.0271745181389 0 0 1 300 159.34427758435723 &#xA;A 101.0271745181389 101.0271745181389 0 0 1 300 308.601373379365" />
+            <text class="label" text-anchor="middle" dy=".35em" x="300" y="248" style="fill: rgb(68, 68, 68);">
+                <tspan x="300" y="248" dy="0.35em">链接</tspan>
+            </text>
+        </g>
+        <g class="venn-area venn-intersection" data-venn-sets="0_2">
+            <path style="fill-opacity: 0;"
+                d="&#xA;M 201.32193299270762 137.68560285726218 &#xA;A 101.0271745181389 101.0271745181389 0 0 1 330.58224373729433 212.31439714273776 &#xA;A 101.0271745181389 101.0271745181389 0 0 1 201.32193299270762 137.68560285726218" />
+            <text class="label" text-anchor="middle" dy=".35em" x="253" y="167" style="fill: rgb(68, 68, 68);">
+                <tspan x="253" y="167" dy="0.35em">链接</tspan>
+            </text>
+        </g>
+        <g class="venn-area venn-intersection" data-venn-sets="1_2">
+            <path style="fill-opacity: 0;"
+                d="&#xA;M 269.41778371282106 212.31427207724957 &#xA;A 101.0271745181389 101.0271745181389 0 0 1 398.6784607719289 137.68572792275037 &#xA;A 101.0271745181389 101.0271745181389 0 0 1 269.41778371282106 212.31427207724957" />
+            <text class="label" text-anchor="middle" dy=".35em" x="346" y="167" style="fill: rgb(68, 68, 68);">
+                <tspan x="346" y="167" dy="0.35em">链接</tspan>
+            </text>
+        </g>
+        <g class="venn-area venn-intersection" data-venn-sets="0_1_2">
+            <path style="fill-opacity: 0;"
+                d="&#xA;M 300 159.34427758435723 &#xA;A 101.0271745181389 101.0271745181389 0 0 1 330.58224373729433 212.31439714273776 &#xA;A 101.0271745181389 101.0271745181389 0 0 1 269.41778371282106 212.31427207724957 &#xA;A 101.0271745181389 101.0271745181389 0 0 1 300 159.34427758435723" />
+            <text class="label" text-anchor="middle" dy=".35em" x="299" y="194" style="fill: rgb(68, 68, 68);">
+                <tspan x="299" y="194" dy="0.35em">链接</tspan>
+            </text>
+        </g>
+    </svg>
+</svg>
