@@ -3,7 +3,7 @@
 ```yaml
 标题: 通用写作律法
 创建时间: 2023-08-26
-版本: 0.0.27-beta
+版本: 0.0.28-beta
 ```
 
 《<ruby>通用写作律法<rp>(</rp><rt>General Writing Laws</rt><rp>)</rp></ruby>》是由
@@ -160,11 +160,11 @@ GWLM 0 是收录通用写作律法模块的清单，会收录所有的 GWLM（Ge
 
     通常与二进制文件对立，人类可读的文件一般叫做纯文本。
 
-    或者与富文本对立，缺乏链接、嵌入图片、颜色样式等电子文档的功能。
+    或者与富文本对立，缺乏超链接、嵌入图片、颜色样式等电子文档的功能。
 
 +   GWLM 1-7 富文本
 
-    通常与纯文本对立，含有链接、嵌入图片、颜色样式等电子文档的功能。
+    通常与纯文本对立，含有超链接、嵌入图片、颜色样式等电子文档的功能。
 
 +   GWLM 1-8 二进制文件
 
@@ -625,7 +625,7 @@ GWLM 15 将参考各种常用纯文本使用者的观点，整理出各种纯文
 
 纯文本被用在 Usenet、IRC 和电子邮件等地，虽然现在流行使用 HTML 的电子邮件，但纯文本依然是可选项。
 
-纯文本往往就意味着无法直接使用缩进、链接和分割线等功能，只能使用大家约定的符号来定义一些效果。
+纯文本往往就意味着无法直接使用缩进、超链接和分割线等功能，只能使用大家约定的符号来定义一些效果。
 
 使用符号来约定效果，可能启发了 Setext、Org-mode 和 Markdown 等可读的标记语言。
 
@@ -1297,15 +1297,15 @@ dolor in reprehenderit.
 当多重引用越来越多时，也就越来越难以阅读，所以 RFC 2646 描述的 format=flowed，这种自动解析、
 流动性（自适应宽度）的引用功能，就是加强纯文本的方案，这也影响了 Markdown 的严格换行功能。
 
-### GWLM 16-?? 链接
+### GWLM 16-?? 超链接
 
 #### GWLM 16-??-0 概述
 
-链接的全称是超链接（[hyperlink][]），有时也简称为超链，是富文本重要的功能之一，随后被万维网的 HTML \<a> 元素发扬光大。
+超链接的全称是超链接（[hyperlink][]），有时也简称为超链，是富文本重要的功能之一，随后被万维网的 HTML \<a> 元素发扬光大。
 
 [hyperlink]: https://en.wikipedia.org/wiki/Hyperlink
 
-之后链接的用法大致也遵循 HTML 的用法，比如 Word、PDF 都能创建文字链接。不过 HTML 可以给各种内容创建链接，
+之后超链接的用法大致也遵循 HTML 的用法，比如 Word、PDF 都能创建文字超链接。不过 HTML 可以给各种内容创建超链接，
 比如图片和按钮等。
 
 **名称历史：**
@@ -1319,15 +1319,15 @@ dolor in reprehenderit.
 
 [RFC 1866]: https://datatracker.ietf.org/doc/html/rfc1866
 
-锚元素、链接等词语的关系大概如下所示：
+锚元素、超链接等词语的关系大概如下所示：
 
 <figure align="center" markdown="1">
 
-![链接（维恩图）](src/hyperlink_venn.svg)
+![超链接（维恩图）](src/hyperlink_venn.svg)
 
 <figcaption align="center">
 
-链接（维恩图），通过 [benfred/venn.js](https://github.com/benfred/venn.js/) 绘制
+超链接（维恩图），通过 [benfred/venn.js](https://github.com/benfred/venn.js/) 绘制
 
 </figcaption></figure>
 
@@ -1336,10 +1336,10 @@ sets = [
     {sets: [0], label: "页面中的文本", size: 100, fill: "#000000"},
     {sets: [1], label: "前往的页面", size: 100, fill: "#551A8B"},
     {sets: [2], label: "锚元素", size: 100, fill: "#0000EE"},
-    {sets: [0, 1], size: 20, label: "链接"},
-    {sets: [0, 2], size: 20, label: "链接"},
-    {sets: [1, 2], size: 20, label: "链接"},
-    {sets: [0, 1, 2], size: 12, label: "链接"},
+    {sets: [0, 1], size: 20, label: "超链接"},
+    {sets: [0, 2], size: 20, label: "超链接"},
+    {sets: [1, 2], size: 20, label: "超链接"},
+    {sets: [0, 1, 2], size: 12, label: "超链接"},
 ]
 
 https://github.com/benfred/venn.js/
@@ -1347,10 +1347,12 @@ https://observablehq.com/@ccwang002/simple-venn-diagram-generator
 https://blog.liang2.tw/posts/2019/04/generate-venn-svg/
 -->
 
-所以链接算是更高层的概念，通常指使用了锚元素的一段内容。比如 <http://example.com> 和 `http://example.com`，
-通常前者被叫做链接，而后者是 URL。大致是这样，这些词语经常会混用，不过问题也不大。
+所以超链接算是更高层的概念，通常指使用了锚元素的一段内容。比如 <http://example.com> 和 `http://example.com`，
+通常前者被叫做超链接，而后者是 URL。大致是这样，这些词语经常会混用，不过问题也不大。
 
-**视觉效果历史：**
+#### GWLM 16-xx-1 超链接的视觉效果
+
+**简介：**
 
 RFC 1866 中的锚元素的示例如下：
 
@@ -1358,12 +1360,62 @@ RFC 1866 中的锚元素的示例如下：
 <a href="app1.html#bananas">appendix 1</a>
 ```
 
-可以看到没有「点击」「前往」之类的提示类词语，而是直接写上了目的地名称——附录 1，这是因为链接自带高亮效果，
+可以看到没有「点击」「前往」之类的提示类词语，而是直接写上了目的地名称——附录 1，这是因为超链接自带高亮效果，
 能够产生明显的可点击效果，而在早期的 HTML 中，能点击就几乎等于超链接，也就无需再用其他的提示类词语标注了。
 
-最初的浏览器显示的链接，是黑白的，仅有黑色下划线表示链接，…………〔待续〕
+最初的浏览器显示的超链接，是黑白的，仅有黑色下划线表示超链接，直到 1993年4月12日 的 Mosaic 0.13 版本，
+才出现了蓝色的超链接。[^wahb][^wahbr]
 
-#### GWLM 16-xx-1 尖括号表示链接
+[^wahb]: Elise Blanchard, [_Why are hyperlinks blue?_](https://blog.mozilla.org/en/internet-culture/deep-dives/why-are-hyperlinks-blue/), The Mozilla Blog, 2021-08-26. (参照 2023-09-24).
+
+[^wahbr]: Elise Blanchard, [_Revisiting why hyperlinks are blue_](https://blog.mozilla.org/en/internet-culture/why-are-hyperlinks-blue-revisited/), The Mozilla Blog, 2022-01-11. (参照 2023-09-24).
+
+然后 1994 年的网景领航员（Netscape Navigator），正式将蓝色的超链接推广到了全球，成为事实标准，变被收录到 W3C 文档中。
+
+此时的超链接是蓝色加下划线的情况，并且将鼠标指针移动上去时，指针还会变成可点击的状态。
+
+**使用：**
+
+HTML5 正式取代 Flash 左右，超链接的下划线逐渐被取消，比如 Google 等搜索引擎有这么做，能简化视觉效果。对此，
+主要有以下观点：
+
+1.  「谁敢改祖宗的章程，谁就得掉脑袋。」
+
+    蓝色加下划线的超链接，已经流行了超过十年，不需要变动。
+
+2.  「始终走在时代前列。」
+
+    仅保留蓝色，这是 21 世纪 20 年代流行的风格。
+
+在同一个网站、电子文档中，为了一致性，可以限定一种标记方式：
+
++   GWLM Markdown ??-1 使用蓝色加下划线表示超链接。
++   GWLM Markdown ??-2 使用蓝色表示超链接。
+
+**Markdown：**
+
+Markdown 的超链接有两种写法，分别是常规和引用式写法：
+
+```markdown
+[Why are hyperlinks blue?](https://blog.mozilla.org/en/internet-culture/deep-dives/why-are-hyperlinks-blue/)
+```
+
+```markdown
+[Why are hyperlinks blue?][]
+
+[Why are hyperlinks blue?](https://blog.mozilla.org/en/internet-culture/deep-dives/why-are-hyperlinks-blue/)
+```
+
+对于混在长文中，以及多次提到的超链接来说，适合引用式写法。
+
+#### GWLM 16-xx-2 超链接的锚文本
+
+**简介：**
+
+超链接的锚文本
+〔待续〕
+
+#### GWLM 16-xx-3 尖括号表示超链接
 
 **简介：**
 
@@ -1392,7 +1444,7 @@ RFC 1866 中的锚元素的示例如下：
 
 **用法：**
 
-给链接（URL）的左右添加尖括号，其他 URI 比如 DOI 也可以：
+给超链接（URL）的左右添加尖括号，其他 URI 比如 DOI 也可以：
 
     <https://doi.org/10.1000/182>
 
@@ -1417,7 +1469,7 @@ Markdown 跟 RFC 3986 提到的尖括号相似，然后会将：
 ### GWLM 16-xx 富文本的复合用法
 
 +   倾斜与加粗
-+   倾斜与链接
++   倾斜与超链接
 
 〔待续〕
 
@@ -1437,7 +1489,7 @@ Markdown 最初的开发者，以及许多兼容的渲染器都没怎么考虑�
 
 暂定的规则，需要研究。
 
-对链接特殊处理（一）：为链接的前后添加间距：
+对超链接特殊处理（一）：为超链接的前后添加间距：
 
 埃佩克斯是位于 [北卡罗来纳州](#/) [韦克县](#/) 的一个镇，属于 [罗利](#/) [郊区](#/) 的一部份。
 
@@ -2814,7 +2866,7 @@ GWLM 15834-4-17 是替代《GB/T 15834—2011 标点符号用法标准》4.17 �
             %% "＼" : 0001-01-01, 10d
             %% section 着重号
             %% "＼" : 0001-01-01, 10d
-            section 链接号
+            section 超链接号
             1    : 0001-01-01, 1d
             section 间隔号
             1    : 0001-01-01, 1d
@@ -3243,7 +3295,7 @@ GWLM 15834-4-17 是替代《GB/T 15834—2011 标点符号用法标准》4.17 �
 
     > 《侦探已经，死了。》
 
-<!-- 存放引用式链接 -->
+<!-- 存放引用式超链接 -->
 
 [中文文案排版指北]: https://github.com/sparanoid/chinese-copywriting-guidelines
 [重訂標點符號手冊]: https://language.moe.gov.tw/001/Upload/FILES/SITE_CONTENT/M1/HAU/haushou.htm
