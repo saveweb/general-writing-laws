@@ -3,7 +3,7 @@
 ```yaml
 标题: 通用写作律法
 创建时间: 2023-08-26
-版本: 0.0.28-beta
+版本: 0.0.29-beta
 ```
 
 《<ruby>通用写作律法<rp>(</rp><rt>General Writing Laws</rt><rp>)</rp></ruby>》是由
@@ -1297,9 +1297,9 @@ dolor in reprehenderit.
 当多重引用越来越多时，也就越来越难以阅读，所以 RFC 2646 描述的 format=flowed，这种自动解析、
 流动性（自适应宽度）的引用功能，就是加强纯文本的方案，这也影响了 Markdown 的严格换行功能。
 
-### GWLM 16-?? 超链接
+### GWLM 16-5 超链接
 
-#### GWLM 16-??-0 概述
+#### GWLM 16-5-0 概述
 
 超链接的全称是超链接（[hyperlink][]），有时也简称为超链，是富文本重要的功能之一，随后被万维网的 HTML \<a> 元素发扬光大。
 
@@ -1350,7 +1350,7 @@ https://blog.liang2.tw/posts/2019/04/generate-venn-svg/
 所以超链接算是更高层的概念，通常指使用了锚元素的一段内容。比如 <http://example.com> 和 `http://example.com`，
 通常前者被叫做超链接，而后者是 URL。大致是这样，这些词语经常会混用，不过问题也不大。
 
-#### GWLM 16-xx-1 超链接的视觉效果
+#### GWLM 16-5-1 超链接的视觉效果
 
 **简介：**
 
@@ -1389,8 +1389,8 @@ HTML5 正式取代 Flash 左右，超链接的下划线逐渐被取消，比如 
 
 在同一个网站、电子文档中，为了一致性，可以限定一种标记方式：
 
-+   GWLM Markdown ??-1 使用蓝色加下划线表示超链接。
-+   GWLM Markdown ??-2 使用蓝色表示超链接。
++   GWLM HTML ??-1 使用蓝色加下划线表示超链接。
++   GWLM HTML ??-2 使用蓝色表示超链接。
 
 **Markdown：**
 
@@ -1408,14 +1408,74 @@ Markdown 的超链接有两种写法，分别是常规和引用式写法：
 
 对于混在长文中，以及多次提到的超链接来说，适合引用式写法。
 
-#### GWLM 16-xx-2 超链接的锚文本
+#### GWLM 16-5-2 超链接的锚文本
 
 **简介：**
 
-超链接的锚文本
-〔待续〕
+```html
+<a href="app1.html#bananas">appendix 1</a>
+```
 
-#### GWLM 16-xx-3 尖括号表示超链接
+这里的「appendix 1」是锚文本，是用来指向被连接的页面的提示，常见的锚文本用法如下：
+
++   世界上最大的百科全书：<https://en.wikipedia.org/>。
++   世界上最大的 [百科全书](https://en.wikipedia.org/)。
++   [世界上最大的百科全书](https://en.wikipedia.org/)。
++   世界上最大的百科全书，单击 [此处](https://en.wikipedia.org/) 了解详情。
+
+（编者注：这里的用法名称和示例都是暂定的，暂未详细研究）
+
+分别是「所见即所得」「关键词式」「说明式」和「语境式」的超链接，一些差异如下：
+
+| ＼                | 所见即所得 | 说明式   | 关键词式 | 语境式       |
+| ----------------- | ---------- | -------- | -------- | ------------ |
+| 强调              | URL        | 说明文本 | 关键词   | 前往目标页面 |
+| 屏幕阅读器[^jhlt] | 不明确     | ／       | ／       | 不明确       |
+| SEO[^jhlt]        | 扣分       | ／       | ／       | 扣分         |
+
+[^jhlt]: Jed Hartman, [_Link text_](https://www.kith.org/jed/2004/12/09/link-text/), Lorem Ipsum, 2004-12-09. (参照 2023-09-25).
+
+**使用：**
+
+「语境式」超链接强调了前往目标页面，而强调多次等于没有强调，所以通常页面中至多使用一次「语境式」超链接。
+
+锚文本可以在左右添加间距，比如下面的两种写法的演示：
+
++   _Cave Chaos_ 是[多人合作](#/)[动作冒险](#/) Flash 游戏。
++   _Cave Chaos_ 是 [多人合作](#/) [动作冒险](#/) Flash 游戏。
+
+同一篇文章中具有一致性即可。
+
++   GWLM Markdown xx-2-1 标准的锚文本。
++   GWLM Markdown xx-2-2 锚文本左右添加间距。
+
+#### GWLM 16-5-3 仅域名 URL 的末尾斜线问题
+
+**简介：**
+
+文章中可能会出现特定的官网 URL 情况，但仅域名的 URL 有两种常见写法，分别是：
+
++   `http://example.com`
++   `http://example.com/`
+
+前者末尾没有斜线，而后者末尾有斜线，二者在浏览器中访问，均是等价的。那么在同一个网站、电子文档中，为了一致性，
+应该使用什么方案？
+
+**使用：**
+
+比较符合一致性的方法，是检查浏览器在与网站服务器通讯时，底层是否有使用斜线。
+
+[RFC 2616][]（_Hypertext Transfer Protocol -- HTTP/1.1_）提到了发送 Request-URI 是根目录时，应该发送斜线而不是空的路径。
+
+[RFC 2616]: https://datatracker.ietf.org/doc/html/rfc2616
+
+这在 Firefox 117.0.1 和 Chrome 117.0.5938.92 版本的测试中也能复现，并且 Firefox 在输入完域名后，会在建议中自动加上斜线。
+所以含有斜线的「仅域名 URL」，更符合一致性。
+
+备注：`http://example.com/index` 与 `http://example.com/index/` 是两个不同的路径，有时服务端有一些模糊路径功能，
+能够混淆使用。
+
+#### GWLM 16-5-4 尖括号表示超链接
 
 **简介：**
 
@@ -1433,11 +1493,11 @@ Markdown 的超链接有两种写法，分别是常规和引用式写法：
 
 +   _Uniform Resource Locators (URL)_（草案）
 
-        <http://www.acl.lanl.gov/URI/archive/uri-archive.index.html>
+    `<http://www.acl.lanl.gov/URI/archive/uri-archive.index.html>`
 
 +   RFC 1738
 
-        <URL:http://www.acl.lanl.gov/URI/archive/uri-archive.index.html>
+    `<URL:http://www.acl.lanl.gov/URI/archive/uri-archive.index.html>`
 
 随后在 2005 年被编写到了 RFC 3986 的 [附录 C](https://datatracker.ietf.org/doc/html/rfc3986#appendix-C) 中，
 建议使用引号或者空格等字符包裹 URI，其中最佳方案是尖括号。
@@ -1488,10 +1548,6 @@ Markdown 最初的开发者，以及许多兼容的渲染器都没怎么考虑�
 ## GWLM 16-xx 其他内容
 
 暂定的规则，需要研究。
-
-对超链接特殊处理（一）：为超链接的前后添加间距：
-
-埃佩克斯是位于 [北卡罗来纳州](#/) [韦克县](#/) 的一个镇，属于 [罗利](#/) [郊区](#/) 的一部份。
 
 ## GWLM 17 时间修补
 
