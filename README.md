@@ -3,7 +3,7 @@
 ```yaml
 标题: 通用写作律法
 创建时间: 2023-08-26
-版本: 0.0.29-beta
+版本: 0.0.30-beta
 ```
 
 《<ruby>通用写作律法<rp>(</rp><rt>General Writing Laws</rt><rp>)</rp></ruby>》是由
@@ -52,7 +52,10 @@ Full support for other writing system, and _General Writing Laws_ translations a
 并且《律法》兼容多种书写系统，不仅仅是中文主体，而是要打造一套各种书写系统都通用的写作规则，
 并且减少特例、例外的情况，让规范简单易懂。
 
-<!-- 因为《律法》是模块化的，所以可以选配各种不同的规范，然后生成仅包含这些规范的个性化《律法》。（此功能暂未实现） -->
+<!--
+    因为《律法》是模块化的，所以可以选配各种不同的规范，
+    然后生成仅包含这些规范的个性化《律法》。（此功能暂未实现）
+-->
 
 目前《律法》本身的书写规范是：GWLM 2-1、GWLM 2-2、GWLM 2-3、GWLM 2-6、GWLM 2-8、GWLM 3-1、GWLM 18-1、
 GWLM 18-2、GWLM 18-3。
@@ -635,8 +638,6 @@ GWLM 15 将参考各种常用纯文本使用者的观点，整理出各种纯文
 
 [签名块][] 是早期电子邮件、Usenet 常用的功能。通常是以短横线、短横线和空格组成分割线：
 
-[签名块]: https://en.wikipedia.org/wiki/Signature_block
-
 ```usenet
 ...orist it's an unnecessary optimization and a (to use your words)
 "performance hack", but I'm interested in a Real operating system ---
@@ -990,16 +991,12 @@ The _middle_ of this.
 
     接着 Markdown 扩展语法，比如脚注也借用了 Textile 的上标记号用法。
 
-    <!-- 用着借来的形状、借来的名称，最后 `^` 符号成为了独特的符号。 -->
+    <!-- 用着借来的形状、借来的名称，最后 `^` 符号成为了独特的符号。-->
 
 详细的数学符号在纯文本中的使用，可以参考 [_A Primer for Communicating Mathematics via Plain Text_][] 这篇文章。
 
-[_A Primer for Communicating Mathematics via Plain Text_]: https://cse.sc.edu/~fenner/latex-ASCII.pdf
-
 化学物质也能用纯文本表示，比如 [simplified molecular-input line-entry system][]（SMILES）是一种将分子模型转化为 ASCII
 文本的规则。比如二氧化碳的 SMILES 是 `C(=O)=O`。
-
-[simplified molecular-input line-entry system]: https://en.wikipedia.org/wiki/Simplified_molecular-input_line-entry_system
 
 **用法：**
 
@@ -1040,8 +1037,6 @@ Markdown 均不支持以上写法。
 
 Usenet 以及后续发展的软件，影响了后来的标记语言，[MeatballWiki][] 整理了各种 Wiki 软件使用的标记语言，
 可以看到标记非常混乱，比如下划线在一些 Wiki 软件表示给文字添加下划线，但在另一些 Wiki 软件中表示斜体。
-
-[MeatballWiki]: http://meatballwiki.org/wiki/CharacterFormattingRules
 
 如果从用法数量来统计，那么有一定程度普遍性的用法如下：
 
@@ -1251,8 +1246,6 @@ Subject: Job
 Markdown 缺乏整句高亮的手段，所以存在一些 Markdown 软件开发者以及用户，将块引用、代码块当作「高亮段落」使用。
 如果要使用「高亮段落」，应使用 [Admonitions][]（告诫）类 Markdown 扩展语法。
 
-[Admonitions]: #gwlm-16--admonitions
-
 Markdown 的引用效果，在许多「原教旨主义」版本中，比如 GitHub Flavored Markdown（[GFM][]），往往引用的颜色较浅，
 对于一些用户来说比较反直觉，这是因为 GFM 沿用了 Usenet 的引用回复用法，并使用了 format=flowed 的视觉效果。
 
@@ -1297,13 +1290,117 @@ dolor in reprehenderit.
 当多重引用越来越多时，也就越来越难以阅读，所以 RFC 2646 描述的 format=flowed，这种自动解析、
 流动性（自适应宽度）的引用功能，就是加强纯文本的方案，这也影响了 Markdown 的严格换行功能。
 
+#### GWLM 16-4-3 源文件可维护性
+
+**简介：**
+
+1995 年的 [RFC 1866][]（_Hypertext Markup Language - 2.0_）讲解了段落的写法：
+
+> 5.5. Block Structuring Elements
+>
+> Block structuring elements include paragraphs, lists, and block
+> quotes. They must not contain heading elements, but they may contain
+> phrase markup, and in some cases, they may be nested.
+>
+> 5.5.1. Paragraph: P
+>
+> The \<P> element indicates a paragraph. The exact indentation, leading
+> space, etc. of a paragraph is not specified and may be a function of
+> other tags, style sheets, etc.
+>
+> Typically, paragraphs are surrounded by a vertical space of one line
+> or half a line. The first line in a paragraph is indented in some
+> cases.
+>
+> Example of use:
+>
+> ```html
+> <H1>This Heading Precedes the Paragraph</H1>
+> <P>This is the text of the first paragraph.
+> <P>This is the text of the second paragraph. Although you do not
+> need to start paragraphs on new lines, maintaining this
+> convention facilitates document maintenance.</P>
+> <P>This is the text of a third paragraph.</P>
+> ```
+
+<details markdown="1">
+<summary>翻译后的内容</summary>
+
+> 5.5. 块结构元素
+>
+> 块结构元素包括段落、列表和块引用。它们不得包含标题元素，但可以包含片段标记，并且在某些情况下，它们可以嵌套。
+>
+> 5.5.1. 段落：P
+>
+> \<P> 元素表示一个段落。段落的确切缩进、前导空格等未指定，并且可能是其他标签、样式表等的函数。
+>
+> 通常，段落上下会有一行或半行的垂直间距。在某些情况下，段落中的第一行会缩进。
+>
+> 使用示例：
+>
+> ```html
+> <H1>该标题位于段落之前</H1>
+> <P>这是第一段。
+> <P>这是第二段。尽管您不需要换行，
+> 但维护此约定有助于文档维护。</P>
+> <P>这是第三段。</P>
+> ```
+
+</details>
+
+可以看到 \<p> 元素跨越了多行，但还是能正常使用，并且 \<p> 元素会忽略换行符号以及多余的空格，自动化的连接元素中的内容。
+
+将段落拆分的原因应该是为了方便维护，曾经 HTML 网页几乎都是人力编写的全部或者部分，如果一个段落有数千个字符，
+而编辑器没有自动换行功能，就会很痛苦了。而现代的编辑器基本都有自动换行功能，即使如此，还是有「缩减栏宽」等功能，
+将文字以一定的宽度分段，防止 16:9 宽屏带来的阅读障碍。
+
+Visual Studio Code 等软件可以开启垂直标尺（vertical rulers）功能，比如 Python 的 [PEP 8][] 代码风格，
+限制每行最多 79 个字符，这能增加代码的可读性。
+
+[PEP 8]: https://peps.python.org/pep-0008/
+
+关于 79 个字符限制的考据：可能源自早期终端的 80 × 25 字符的显示空间，即行宽为 80 个字符。
+然后为了在 diff 等工具中正常使用，所以需要减 1 个字符，比如下面的 diff 演示：
+
+```diff
+-版本: 0.0.29-beta
++版本: 0.0.30-beta
+```
+
+（左侧的加减号表示增减）
+
+之后终端的宽度稍有增加，在 Windows 10 的 CMD 默认中，行宽是 120 个字符，其他常见的行宽还有 100，
+所以有一些代码风格设定的是 99 或 119 个字符。
+
+**用法：**
+
+现在的 HTML 通常不需要考虑这件事，因为几乎不需要手动编辑 HTML 了，而是使用所见即所得编辑器，或者其他标记语言生成 HTML。
+
+**Markdown：**
+
+Markdown（CommonMark）拥有 HTML 的这类功能，会将多行内容直接输出到 \<p> 元素中：
+
+```markdown
+测试
+内容
+test
+```
+
+```html
+<p>测试
+内容
+test</p>
+```
+
+显示为「测试内容 test」，其中英文附近的空格是浏览器自动添加的词间距，在符合 CommonMark 规范的情况下可以将段落拆分，
+方便维护，然后太长的链接、表格和被 base64 编码的图片不需要拆分，接着将文本编辑器的自动换行关闭，
+就能方便的编写 Markdown 文档。
+
 ### GWLM 16-5 超链接
 
 #### GWLM 16-5-0 概述
 
 超链接的全称是超链接（[hyperlink][]），有时也简称为超链，是富文本重要的功能之一，随后被万维网的 HTML \<a> 元素发扬光大。
-
-[hyperlink]: https://en.wikipedia.org/wiki/Hyperlink
 
 之后超链接的用法大致也遵循 HTML 的用法，比如 Word、PDF 都能创建文字超链接。不过 HTML 可以给各种内容创建超链接，
 比如图片和按钮等。
@@ -1313,11 +1410,7 @@ dolor in reprehenderit.
 1991 年，蒂姆·伯纳斯-李（T. Berners-Lee）发表了 [_HTML Tags_][]，是介绍 HTML 的文档，
 当时的锚元素（anchors）还没有提到超链接这一用语。
 
-[_HTML Tags_]: https://web.archive.org/web/20130701080844/http://info.cern.ch/hypertext/WWW/MarkUp/Tags.html
-
 1995 年，蒂姆·伯纳斯-李以及 MIT/W3C 发布了 [RFC 1866][]（_Hypertext Markup Language - 2.0_），开始使用超链接这一用语。
-
-[RFC 1866]: https://datatracker.ietf.org/doc/html/rfc1866
 
 锚元素、超链接等词语的关系大概如下所示：
 
@@ -1446,8 +1539,8 @@ Markdown 的超链接有两种写法，分别是常规和引用式写法：
 
 同一篇文章中具有一致性即可。
 
-+   GWLM Markdown xx-2-1 标准的锚文本。
-+   GWLM Markdown xx-2-2 锚文本左右添加间距。
++   GWLM Markdown 5-2-1 标准的锚文本。
++   GWLM Markdown 5-2-2 锚文本左右添加间距。
 
 #### GWLM 16-5-3 仅域名 URL 的末尾斜线问题
 
@@ -1465,11 +1558,11 @@ Markdown 的超链接有两种写法，分别是常规和引用式写法：
 
 比较符合一致性的方法，是检查浏览器在与网站服务器通讯时，底层是否有使用斜线。
 
-[RFC 2616][]（_Hypertext Transfer Protocol -- HTTP/1.1_）提到了发送 Request-URI 是根目录时，应该发送斜线而不是空的路径。
+[RFC 2616][]（_Hypertext Transfer Protocol -- HTTP/1.1_）提到了发送 Request-URI 是根目录时，
+应该发送斜线而不是空的路径。
 
-[RFC 2616]: https://datatracker.ietf.org/doc/html/rfc2616
-
-这在 Firefox 117.0.1 和 Chrome 117.0.5938.92 版本的测试中也能复现，并且 Firefox 在输入完域名后，会在建议中自动加上斜线。
+这在 Firefox 117.0.1 和 Chrome 117.0.5938.92 版本的测试中也能复现，并且 Firefox 在输入完域名后，
+会在建议中自动加上斜线。
 所以含有斜线的「仅域名 URL」，更符合一致性。
 
 备注：`http://example.com/index` 与 `http://example.com/index/` 是两个不同的路径，有时服务端有一些模糊路径功能，
@@ -1487,9 +1580,6 @@ Markdown 的超链接有两种写法，分别是常规和引用式写法：
 在 1994 年的 [_Uniform Resource Locators (URL)_][]（草案），以及正式版 [RFC 1738][] 中，
 万维网之父——蒂姆·伯纳斯-李，使用了尖括号来表示纯文本中的 URL，但有一些差异。
 前者作为附录的非强制标准，后者同样是建议：
-
-[_Uniform Resource Locators (URL)_]: https://web.archive.org/web/20230902014616/https://www.w3.org/Addressing/URL/url-spec.txt
-[RFC 1738]: https://datatracker.ietf.org/doc/html/rfc1738
 
 +   _Uniform Resource Locators (URL)_（草案）
 
@@ -1521,6 +1611,31 @@ Markdown 跟 RFC 3986 提到的尖括号相似，然后会将：
     <a href="http://example.com/">http://example.com/</a>
 
 但是需要添加 `http://` `ftp://` 等协议前缀，否则就不会转换。
+
+### GWLM 16-5 富文本之下
+
+#### GWLM 16-5-1 HTML 注释
+
+**简介：**
+
+HTML 注释是以 `<!--` 开头，并以 `-->` 结尾的括号。
+
+**用法：**
+
+HTML 注释有多种写法，下面是 [W3Schools 的 HTML 样式指南](https://www.w3schools.com/html/html5_syntax.asp) 建议的写法：
+
+```html
+<!-- 这是单行注释，前后都应该留有一个空格的间距。-->
+
+<!--
+    这是多行注释，缩进一下就更容易观察。
+    这是多行注释，缩进一下就更容易观察。
+-->
+```
+
+**Markdown：**
+
+用法与 HTML 的相同。
 
 ### GWLM 16-xx Admonitions
 
@@ -3353,8 +3468,13 @@ GWLM 15834-4-17 是替代《GB/T 15834—2011 标点符号用法标准》4.17 �
 
 <!-- 存放引用式超链接 -->
 
+[_A Primer for Communicating Mathematics via Plain Text_]: https://cse.sc.edu/~fenner/latex-ASCII.pdf
+[_HTML Tags_]: https://web.archive.org/web/20130701080844/http://info.cern.ch/hypertext/WWW/MarkUp/Tags.html
+[_Uniform Resource Locators (URL)_]: https://web.archive.org/web/20230902014616/https://www.w3.org/Addressing/URL/url-spec.txt
+[签名块]: https://en.wikipedia.org/wiki/Signature_block
 [中文文案排版指北]: https://github.com/sparanoid/chinese-copywriting-guidelines
 [重訂標點符號手冊]: https://language.moe.gov.tw/001/Upload/FILES/SITE_CONTENT/M1/HAU/haushou.htm
+[Admonitions]: #gwlm-16--admonitions
 [atx 标记语言]: https://web.archive.org/web/20040223210813/http://www.aaronsw.com/2002/atx/intro
 [BEP 0000]: https://www.bittorrent.org/beps/bep_0.html
 [GB 3100—1993 国际单位制及其应用]: https://zh.wikisource.org/zh/GB_3100-1993_国际单位制及其应用
@@ -3362,5 +3482,11 @@ GWLM 15834-4-17 是替代《GB/T 15834—2011 标点符号用法标准》4.17 �
 [GB/T 15834—2011 标点符号用法标准]: http://www.moe.gov.cn/ewebeditor/uploadfile/2015/01/13/20150113091548267.pdf
 [GFM]: https://github.github.com/gfm/
 [Halfwidth Left Corner Bracket]: https://web.archive.org/web/20230531223705/https://compart.com/en/unicode/U+FF62
+[hyperlink]: https://en.wikipedia.org/wiki/Hyperlink
+[MeatballWiki]: http://meatballwiki.org/wiki/CharacterFormattingRules
+[RFC 1738]: https://datatracker.ietf.org/doc/html/rfc1738
+[RFC 1866]: https://datatracker.ietf.org/doc/html/rfc1866
+[RFC 2616]: https://datatracker.ietf.org/doc/html/rfc2616
 [Save The Web Project]: https://github.com/saveweb
+[simplified molecular-input line-entry system]: https://en.wikipedia.org/wiki/Simplified_molecular-input_line-entry_system
 [Steam 2023年8月 的硬件统计]: https://web.archive.org/web/20230911193245/https://store.steampowered.com/hwsurvey/Steam-Hardware-Software-Survey-Welcome-to-Steam
