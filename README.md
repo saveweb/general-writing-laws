@@ -3,7 +3,7 @@
 ```yaml
 标题: 通用写作律法
 创建时间: 2023-08-26
-版本: 0.0.31-beta
+版本: 0.0.32-beta
 ```
 
 《<ruby>通用写作律法<rp>(</rp><rt>General Writing Laws</rt><rp>)</rp></ruby>》是由
@@ -610,6 +610,68 @@ A1 --> B4 --> C5
 
 如题，仅允许六个层级的标题，这与 HTML 的标题元素数量相同，HTML 的标题元素分别是
 `<h1>`、`<h2>`、`<h3>`、`<h4>`、`<h5>` 和 `<h6>`。
+
+## GWLM 13 字幕
+
+### GWLM 13-0 概述
+
+**简介：**
+
+字幕基本上是视频中对话的文本版本，但比起标准的文档有些差异，常见的字幕特征如下：
+
+1.  长度较短。
+2.  位于底部居中。
+3.  通常不使用标点符号。
+
+更详细专业的规则，可以参考 Netflix 的指南：
+
++   [Subtitle Template Timed Text Style Guide](https://partnerhelp.netflixstudios.com/hc/en-us/articles/219375728-English-Template-Timed-Text-Style-Guide)
++   [English Timed Text Style Guide](https://partnerhelp.netflixstudios.com/hc/en-us/articles/217350977-English-Timed-Text-Style-Guide)
+
+**历史：**
+
+字幕的原型，可能是早期默片中，被剪辑插入的文字帧。这些间幕的文字均是位于画面正中，
+被称作间幕（[intertitle][]/title card），在「物语系列」动画中也能经常看到。
+
+[intertitle]: https://en.wikipedia.org/wiki/Intertitle
+
+图像合成技术出现后，字幕（subtitle）取代了间幕，sub- 的前缀有「之下」的含义，这表明了字幕的位置。
+不过 subtitle 的词源其实与电影无关，1815 年的 subtitle 被作为画作的副标题、解释性标题，之后才被视频行业使用。[^etcbs]
+
+[^etcbs]: [_Subtitles – Word of the day – EVS Translations_](https://evs-translations.com/blog/subtitles/), EVS Translations Blog, 2019-08-28. (参照 2023-09-29).
+
+既然字幕源自间幕，那么许多规则也延续了下来，比如黑底白字、居中等。
+
+（本来以为过去的间幕，会缺乏标点符号，结果检索后发现大多都有标点符号，看来字幕缺乏标点的原因不是间幕了……）
+
+**类型：**
+
+美国对字幕有以下叫法：
+
++   open subtitles（开放字幕）
++   closed subtitles（隐藏字幕）
++   closed captioning（隐藏字幕，简称 CC）
++   Prerendered（预渲染）
++   hardsubs（硬字幕）
++   softsubs（软字幕）
+
+其中的隐藏字幕和软字幕属于同义词，指可以由播放器关闭的字幕，比如 .ass 和 .sub 扩展名的字幕。
+开放字幕和硬字幕也是同义词，指字幕被合成到主要视频流（轨道），无法分离的情况。
+
+预渲染的情况比较复杂，主要存在于一些 DVD 中，比如 SST（Sonic Scenarist）格式和 SON（Spruce DVDMaestro）格式，
+可以从原视频中剥离，但是这个字幕是位图格式，而不是纯文本，所以像软字幕可以关闭，也像硬字幕无法轻易导出纯文本。
+
+其中的 captioning 是向聋哑人和听力障碍者，提供描述所有重要的音频内容，比如玻璃碎掉、音乐声等环境音可能也会包含进去。
+
+备注：一些地区不区分 subtitles 与 captioning。
+
+### GWLM 13-1 中文字幕规则
+
+暂定的规则，需要研究。
+
+**延伸：**
+
+虽然现代的字幕源于电影（视频），不过也延伸到了音乐歌词、游戏字幕中。不过居中的情况就没有那么主流了。
 
 ## GWLM 14 Web 内容无障碍指南（WCAG）
 
@@ -1374,6 +1436,8 @@ Visual Studio Code 等软件可以开启垂直标尺（vertical rulers）功能�
 | 90         | CCM4 官方          |
 | 100        | Android 官方       |
 
+（详细表格和具体的风格规范，可以查看维基的 [每行字符数][] 条目。）
+
 这是因为早期电脑的文本显示模式，流行 80 × 25 左右的文本数量，比如 1980 年的 [Apple III][] 是 80 × 24，
 之后 IBM 推出的 [VGA 文本模式][] 标准，也是以 80 作为常用行宽。
 
@@ -1732,7 +1796,7 @@ Markdown 最初的开发者，以及许多兼容的渲染器都没怎么考虑�
 
 〔待续〕
 
-## GWLM 16-xx 其他内容
+### GWLM 16-xx 其他内容
 
 暂定的规则，需要研究。
 
