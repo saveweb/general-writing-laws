@@ -3,7 +3,7 @@
 ```yaml
 标题: 通用写作律法
 创建时间: 2023-08-26
-版本: 0.0.32-beta
+版本: 0.0.33-beta
 ```
 
 《<ruby>通用写作律法<rp>(</rp><rt>General Writing Laws</rt><rp>)</rp></ruby>》是由
@@ -635,7 +635,7 @@ A1 --> B4 --> C5
 
 [intertitle]: https://en.wikipedia.org/wiki/Intertitle
 
-图像合成技术出现后，字幕（subtitle）取代了间幕，sub- 的前缀有「之下」的含义，这表明了字幕的位置。
+图像合成技术出现后，字幕（subtitle）取代了间幕，sub- 的前缀有「之下」的含义，这表明了字幕默认的位置。
 不过 subtitle 的词源其实与电影无关，1815 年的 subtitle 被作为画作的副标题、解释性标题，之后才被视频行业使用。[^etcbs]
 
 [^etcbs]: [_Subtitles – Word of the day – EVS Translations_](https://evs-translations.com/blog/subtitles/), EVS Translations Blog, 2019-08-28. (参照 2023-09-29).
@@ -663,7 +663,7 @@ A1 --> B4 --> C5
 
 其中的 captioning 是向聋哑人和听力障碍者，提供描述所有重要的音频内容，比如玻璃碎掉、音乐声等环境音可能也会包含进去。
 
-备注：一些地区不区分 subtitles 与 captioning。
+备注：一些地区不区分 subtitles 与 captioning，而美国对此区分较严格。
 
 ### GWLM 13-1 中文字幕规则
 
@@ -677,44 +677,13 @@ A1 --> B4 --> C5
 
 暂定的规则，需要研究。
 
-## GWLM 15 纯文本（待合并）
-
-〈GWLM 15 纯文本〉待合并到 GWLM 16 中，下面的内容仅作为临时保留。
-
----
-
-使用纯文本来短文可能不会遇到明显问题，但是缺乏一些复杂的排版、字体效果等富文本内容。
-GWLM 15 将参考各种常用纯文本使用者的观点，整理出各种纯文本的用法。
-
 ### GWLM 15-0 概述
-
-纯文本被用在 Usenet、IRC 和电子邮件等地，虽然现在流行使用 HTML 的电子邮件，但纯文本依然是可选项。
-
-纯文本往往就意味着无法直接使用缩进、超链接和分割线等功能，只能使用大家约定的符号来定义一些效果。
-
-使用符号来约定效果，可能启发了 Setext、Org-mode 和 Markdown 等可读的标记语言。
-
-备注：现在寻找关于 Setext 历史的文章，几乎都是 Markdown 的历史里，浅显的提到 Setext，所以难以研究其历史。
-
-### GWLM 15-6 其他
-
-[签名块][] 是早期电子邮件、Usenet 常用的功能。通常是以短横线、短横线和空格组成分割线：
-
-```usenet
-...orist it's an unnecessary optimization and a (to use your words)
-"performance hack", but I'm interested in a Real operating system ---
-not a research toy.
-
--- 
-Brad Templeton, publisher, ClariNet Communications Corp.         in...@clari.net
-The net's #1 E-Newspaper (1,160,000 paid sbscrbrs.)  http://www.clari.net/brad/
-```
 
 ## GWLM 16 纯文本与富文本
 
-纯文本与富文本缺乏相关完善的规范。GWLM 16 将参考各种常用纯／富文本使用者的观点，整理出各种纯／富文本的用法。
-
 ### GWLM 16-0 概述
+
+纯文本与富文本缺乏相关完善的规范。GWLM 16 将参考各种常用纯／富文本使用者的观点，整理出各种纯／富文本的用法。
 
 **富文本：**
 
@@ -728,6 +697,16 @@ The net's #1 E-Newspaper (1,160,000 paid sbscrbrs.)  http://www.clari.net/brad/
 | 纯文本中间态 | Markdown、BBCode 等  | LaTeX 等         | ／               |
 
 备注：HTML、PDF 和 Word 能够互相转换，但可能丢失部分排版信息。
+
+**纯文本：**
+
+纯文本被用在 Usenet、IRC 和电子邮件等地，虽然现在流行使用 HTML 的电子邮件，但纯文本依然是可选项。
+
+纯文本往往就意味着无法直接使用缩进、超链接和分割线等功能，只能使用大家约定的符号来定义一些效果。
+
+使用符号来约定效果，可能启发了 Setext、Org-mode 和 Markdown 等可读的标记语言。
+
+备注：现在寻找关于 Setext 历史的文章，几乎都是 Markdown 的历史里，浅显的提到 Setext，所以难以研究其历史。
 
 ### GWLM 16-1 字体
 
@@ -1748,9 +1727,9 @@ Markdown 跟 RFC 3986 提到的尖括号相似，然后会将：
 
 但是需要添加 `http://` `ftp://` 等协议前缀，否则就不会转换。
 
-### GWLM 16-5 富文本之下
+### GWLM 16-6 注释
 
-#### GWLM 16-5-1 HTML 注释
+#### GWLM 16-6-1 HTML 注释
 
 **简介：**
 
@@ -1772,6 +1751,94 @@ HTML 注释有多种写法，下面是 [W3Schools 的 HTML 样式指南](https:/
 **Markdown：**
 
 用法与 HTML 的相同。
+
+### GWLM 16-7 签名块
+
+[签名块][] 是早期电子邮件、Usenet 常用的功能。通常是以短横线、短横线和空格组成分割线：
+
+```usenet
+...orist it's an unnecessary optimization and a (to use your words)
+"performance hack", but I'm interested in a Real operating system ---
+not a research toy.
+
+-- 
+Brad Templeton, publisher, ClariNet Communications Corp.         in...@clari.net
+The net's #1 E-Newspaper (1,160,000 paid sbscrbrs.)  http://www.clari.net/brad/
+```
+
+### GWLM 16-8 文字间距
+
+**简介：**
+
+在纸张上书写时，汉字并没有特殊间距，但在电脑出现后，汉字间距曾因为技术原因流行过，也有一些优点。
+
+有两种汉字间距，分别是「防错间距」与「语义间距」。
+
+「防错间距」是因为早期的汉字字符编码系统没有统一，基本都是外挂汉字系统，结果就是常常遇到乱码。
+比如排版系统将中文编码的后半部分，换行到了下一行。[^92141]
+
+[^92141]: Sai, 《[为什么香港很多新闻网站标题与正文每个字之间都有空格？](https://web.archive.org/web/20230516144022/https://www.zhihu.com/question/19592141)》, 知乎, 2011-04-07. (参照 2023-10-10).
+
+另一个原因是早期的数字排版系统不一定兼容 CJK 字符，可能会出现以下问题：
+
+```ascii
++-----------------+
+| CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
+|                 |
+| CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
+|                 |
++-----------------+
+```
+
+这是一种中文段落超过屏幕宽度的问题，用户需要调整横向的滚动条才能看到屏幕外的内容。因为原本排版系统，
+是以各种含有空格（词间距）的西文而设计的，所以只会在空格处自动换行。
+
+```ascii
++-----------------+
+| EEEEE EEE EEE↵  |
+| EEE EEEE EEE↵   |
+| EEEE EEE EEEE.  |
+|                 |
++-----------------+
+```
+
+所以只要给所有汉字添加字间距（空格），就能让排版系统正常工作：
+
+```ascii
++-----------------+
+| CC CC CC CC CC↵ |
+| CC CC CC CC CC↵ |
+| CC CC CC CC CC↵ |
+| CC CC           |
++-----------------+
+```
+
+「语义间距」即「词式书写」，古拉丁文最初没有给词语添加空格，之后的大量文字才开始获得词间距。
+不过日文和中文始终没有大规模推广「词式书写」。
+
+虽然「词式书写」没有在汉字中大规模推广，成为某种正字法，但也有用户认为在信息时代，「词式书写」能够帮助机器翻译、
+信息检索和信息抽取，因为过去的自动分词尚不成熟。[^44653]
+
+[^44653]: 冯志伟, 《[词式书写](https://www.zgbk.com/ecph/words?SiteID=1&ID=29441&Type=bkzyb&SubID=44653)》, 《中国大百科全书》第三版网络版, 2022-01-20. (参照 2023-10-10).
+
+1987 年左右，彭泽润教授开始关注词式书写话题，当时的学术界有人提倡，
+而彭泽润也亲自在自己的出版物《语言 理论》中使用词式书写，目的同样是帮助电脑信息处理。[^t_3_2]
+
+[^t_3_2]: 周和平, 《[他22年坚持写英式汉语](https://web.archive.org/web/20130604041401/http://cswb.changsha.cn/html/2012-08/05/content_3_2.htm)》, 长沙晚报, 2012-08-05. (参照 2023-10-10).
+
+演示如下：[^chroot]
+
+[^chroot]: 唐友, [_chroot(1)_](https://man.archlinux.org/man/chroot.1.zh_CN), Arch manual pages, 2001-09-20. (参照 2023-10-10).
+
+```text
+chroot 的 完整 的 文档 是 以 Texinfo 手册页 维护 的. 如果 info 和 chroot 程序 被 正确 的 安装 在 你的 机子 上, 用
+
+    info chroot
+
+命令 查看 完整 的 手册页.
+```
+
+不过现在通常很少见，因为分词勉强靠巨型词库能够解决一部分，2023 年开始流行的大型语言模型，大概就能完美的解决这一问题。
 
 ### GWLM 16-xx Admonitions
 
