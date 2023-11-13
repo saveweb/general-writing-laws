@@ -3,7 +3,7 @@
 ```yaml
 标题: 通用写作律法
 创建时间: 2023-08-26
-版本: 0.0.36-beta
+版本: 0.0.37-beta
 ```
 
 《<ruby>通用写作律法<rp>(</rp><rt>General Writing Laws</rt><rp>)</rp></ruby>》是由
@@ -426,7 +426,9 @@ GWLM 0 是收录通用写作律法模块的清单，会收录所有的 GWLM（Ge
 
 3.  式子单独为一行时，居中并使用西式句点结尾。
 
-    <p align="center">a × b = 10c.</p>
+    > [!note]
+    >
+    > <p align="center">a × b = 10c.</p>
 
 ### GWLM 2-8 专有名词修补
 
@@ -1894,6 +1896,136 @@ chroot 的 完整 的 文档 是 以 Texinfo 手册页 维护 的. 如果 info �
 
 不过现在通常很少见，因为分词勉强靠巨型词库能够解决一部分，2023 年开始流行的大型语言模型，大概就能完美的解决这一问题。
 
+### GWLM 16-9 Markdown Attribute List
+
+**背景：**
+
+Attribute Lists（属性列表）是纯 Ruby 的 Markdown 渲染器，Maruku 所设计的 Markdown 扩展语法，
+能够快速的为 Markdown 内容添加 HTML 元素属性。
+
+比如 HTML 图片元素 `<img src="1.jpg" alt="图片的后备文字说明" />`，其中的 src 和 alt 都是 HTML 元素属性。
+图片的这两个属性，都能被 Markdown 书写：`![图片](1.jpg "图片的后备文字说明")`，但如需要更复杂的属性，
+Markdown 本身就无法做到了，比如图片太宽，那么 `width=50%` 这样的，降低宽度的元素属性就无法添加，
+除非写成很复杂的 HTML：
+
+```html
+<img src="1.jpg" alt="图片的后备文字说明" width=50% />
+```
+
+Maruku 的开发者注意到了这种问题，于是设计了 [向 Markdown 添加元数据语法的方案][mrkp]，就像下面的演示：
+
+```markdown
+一段测试文字。
+{: class="test" }
+```
+
+将被 Maruku 解释为：
+
+```html
+<p class="test">一段测试文字。</p>
+```
+
+不过 Maruku 早已停止更新。
+
+附言：Maruku 的 Attribute List 功能，可能源自 [Textile 的 Attributes 系列功能][tta]，或是 [asciidoc 的属性语法][adea]，
+不过暂未找到相关证据。
+
+**功能：**
+
+Attribute List 有一些写法要求：
+
+1.  以「`{:`」开头，「`}`」结尾，在中间放入元素，元素间使用空格分割。
+2.  元素类型有以下四种：
+    1.  键／值对（`abc="def"`）
+    2.  参考的 ALD（`ref`）
+    3.  id 说明符（`#myid`）
+    4.  类说明符（`.myclass`）
+
+IAL 是 inline attribute lists 的简称，意为内联属性列表，直接对元素添加属性，用法如下。
+
+```markdown
+演示段落，含有 **粗体**{: .test_1 }，
+段落第二行，演示 [链接](https://example.com/){: .test_2 }。
+{: .test_3 }
+```
+
+将被 Maruku 解释为：
+
+```html
+<p class="test_3">演示段落，含有 <strong class="test_1">粗体</strong>，
+段落第二行，演示 <a class="test_2" href="https://example.com/">链接</a>。</p>
+```
+
+底部的 `{: .test_3 }` 是对块级元素添加属性，段落中的 `{: .test_1 }` 是对行内跨级元素添加属性。
+
+ALD 是 attribute lists definitions 的简称，意为定义属性列表，是引用式的写法，用法如下：
+
+```markdown
+一段测试文字。
+{: test_ref }
+
+{:test_ref: key=val .class #id }
+```
+
+可以在多地使用 `{: test_ref }` 这样的写法，就像 Markdown 的引用式链接，以及常用的扩展语法，脚注的引用式写法。
+
+**兼容性：**
+
+Maruku 对此功能的探索，有被其他解析器吸收，比如 Python-Markdown（须启用 [官方扩展 Attribute Lists][pmal]）以及 kramdown，
+只是不同的 Markdown 解析器，实现了不同的功能，具体情况如下：
+
+|  ＼   | [Maruku][mrkp] | [kramdown][kdald] | [Python-Markdown][pmal] |
+| :---: | :------------: | :---------------: | :---------------------: |
+|  IAL  |       〇       |        〇         |           〇            |
+|  ALD  |       〇       |        〇         |           ㄨ            |
+
+Python-Markdown 不支持 ALD。使用 JavaScript 实现的 Remark，也许能使用年久失修的第三方 [remark-attr][rma] 插件，
+同样不支持 ALD。
+
+本地编辑器中，Obsidian 也有第三方插件 [Markdown Attributes][obma]，不支持 ALD，并且 IAL 的内联功能已经失效。
+[Pandoc][pi684] 支持一些写法，不过花括号后没有冒号。
+
+在这当中，kramdown 被用作 Jeykll 的渲染器，Python-Markdown 被用在 MkDocs 中，都算是广泛使用，
+所以如果经常在这类平台展示文本，那么使用 Attribute Lists 是很合理的。只是 Attribute Lists 在其他 Markdown 渲染器中，
+会原样输出，所以对于在多地展示的文本，也许应该慎用。
+
+**使用：**
+
+Maruku 的写法比较随意，比如 `{:.test_2}`、`{: .test_2}`、`{:.test_2 }` 和 `{: .test_2 }`，都有出现。这里建议多用空格，
+即开头「`{:`」、属性和结尾「`}`」 之间都有空格，比较合理。
+
+属性顺序，可以按照先前「写法要求」的顺序，进行排列。多个同类属性，就以字母顺序排列吧，比如：
+
+1.  键／值对（`abc="def"`）
+2.  参考的 ALD（`ref`）
+3.  id 说明符（`#myid`）
+4.  类说明符（`.myclass`）
+
+```markdown
+一段测试文字。
+{: abc="def" bbc="obs" ref #myid .all .myclass }
+```
+
+最后，汇总一下各种 Markdown 软件的 Attribute Lists 功能页面：
+
++   [maruku][mrkp]
++   [kramdown][kdald]
++   [Pandoc][pi684]
++   Python-Markdown 官方扩展 [Attribute Lists][pmal]
++   Remark 第三方扩展 [remark-attr][rma]
++   Obsidian 第三方插件 [Markdown Attributes][obma]
+
+<!-- 下面是此章节的引用式链接 -->
+
+[adea]: https://docs.asciidoctor.org/asciidoc/latest/attributes/element-attributes/
+[kdald]: https://kramdown.gettalong.org/syntax.html#attribute-list-definitions
+[mrkp]: https://web.archive.org/web/20070111085028/http://maruku.rubyforge.org/proposal.html
+[obma]: https://github.com/javalent/markdown-attributes
+[pi684]: https://github.com/jgm/pandoc/issues/684
+[pmal]: https://python-markdown.github.io/extensions/attr_list/
+[rma]: https://github.com/arobase-che/remark-attr
+[tta]: https://textile-lang.com/doc/spans
+
 ### GWLM 16-xx Admonitions
 
 〔待续〕
@@ -2081,7 +2213,7 @@ moment.updateLocale('zh-cn', {
 
 ### GWLM 18-1 单层书名号修补
 
-作品名有包含关系可以使用单层书名号来表示。
+作品名存在包含关系时，可以使用单层书名号来表示章、节、篇等。
 
 例如：《道德经》分为〈德〉〈道〉两篇。
 
