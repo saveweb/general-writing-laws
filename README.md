@@ -2288,7 +2288,7 @@ moment.updateLocale('zh-cn', {
 
 ## GWLM 20 文件扩展名
 
-[文件扩展名](https://en.wikipedia.org/wiki/Filename_extension) 是文件名的一部分，主要用来给电脑和人提示文件格式。
+[文件扩展名](https://en.wikipedia.org/wiki/Filename_extension) 是文件名的一部分，主要用来给观测者提示文件格式。
 
 +   大多数格式都有制作者，所以在使用全称或者专有名称时，直接以设计者的写法来书写即可。
 +   如果单纯是扩展名，那么通常使用小写的，并且左侧不需要分隔符（西式句点）。
@@ -2318,7 +2318,7 @@ moment.updateLocale('zh-cn', {
 一个思想实验：是否存在没有文件名称，只有文件扩展名的文件？
 
 答案是可以，Windows 的资源管理器（Explorer）能够识别 `.png` 这样的文件为图像。不过受限于大多数文件管理器的算法，
-单纯的 `png` 不会被识别为 `png` 扩展名，而是会被识别为文件名称。
+单纯的 `png` 不会被识别为 `png` 扩展名，而会被识别为文件名称。
 
 ## GWLM 100 连续汉字问题
 
