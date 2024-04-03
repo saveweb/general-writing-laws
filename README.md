@@ -3,7 +3,7 @@
 ```yaml
 标题: 通用写作律法
 创建时间: 2023-08-26
-版本: 0.0.38-beta
+版本: 0.0.39-beta
 ```
 
 《<ruby>通用写作律法<rp>(</rp><rt>General Writing Laws</rt><rp>)</rp></ruby>》是由
@@ -1627,8 +1627,8 @@ https://observablehq.com/@ccwang002/simple-venn-diagram-generator
 https://blog.liang2.tw/posts/2019/04/generate-venn-svg/
 -->
 
-所以超链接算是更高层的概念，通常指使用了锚元素的一段内容。比如 <http://example.com> 和 `http://example.com`，
-通常前者被叫做超链接，而后者是 URL。大致是这样，这些词语经常会混用，不过问题也不大。
+所以超链接算是更高层的概念，通常指使用了锚元素的一段内容。比如 <http://example.com/> 和 `http://example.com/`，
+通常前者被叫做超链接，而后者是 URL。大致是这样，这些词语经常会混用，所以问题也不大。
 
 #### GWLM 16-5-1 超链接的视觉效果
 
@@ -1748,8 +1748,8 @@ Markdown 的超链接有两种写法，分别是常规和引用式写法：
 [RFC 2616][]（_Hypertext Transfer Protocol -- HTTP/1.1_）提到了发送 Request-URI 是根目录时，
 应该发送斜线而不是空的路径。
 
-这在 Firefox 117.0.1 和 Chrome 117.0.5938.92 版本的测试中也能复现，并且 Firefox 在输入完域名后，
-会在建议中自动加上斜线。
+这在 Firefox 117.0.1 和 Chrome 117.0.5938.92 版本的测试中也能复现，并且 Firefox 在输入完域名后，会在建议中自动加上斜线。
+
 所以含有斜线的「仅域名 URL」，更符合一致性。
 
 备注：`http://example.com/index` 与 `http://example.com/index/` 是两个不同的路径，有时服务端有一些模糊路径功能，
@@ -2042,14 +2042,63 @@ Maruku 的写法比较随意，比如 `{:.test_2}`、`{: .test_2}`、`{:.test_2 
 [rma]: https://github.com/arobase-che/remark-attr
 [tta]: https://textile-lang.com/doc/spans
 
+### GWLM 16-10 复合效果
+
+<ruby>链接<rt>`<a>`</rt></ruby>、<ruby>斜体强调<rt>`<em>`</rt></ruby>与<ruby>加粗强调<rt>`<strong>`</rt></ruby>，
+是常用的富文本效果／元素。但是它们有时候会同时使用，嵌套的内外顺序也不影响视觉和 SEO，比如：
+
+```html
+<em><a href="https://example.com">text 1</a></em>
+```
+
+```html
+<a href="https://example.com"><em>text 2</em></a>
+```
+
+这两个斜体的链接，在页面中所呈现的效果相同，但是 Markdown 写法的差异较大：
+
+```markdown
+_[text 3](https://example.com/)_
+```
+
+```markdown
+_[text 4][]_
+
+[text 4]: https://example.com/
+```
+
+```markdown
+[_text 5_](https://example.com/)
+```
+
+```markdown
+[_text 6_][]
+
+[_text 6_]: https://example.com/
+```
+
+由于 Markdown 支持引用式链接，如果同一个链接有时斜体，有时正常。那么倾斜标记在外部更好用：
+
+```markdown
+_[text 7][]_
+
+[text 7][]
+
+[text 7]: https://example.com/
+```
+
+所以在嵌套顺序中，最里是链接比较合适。同样的顺序，也能在 Gmail 与 richtexteditor.com 编辑器中看到。
+
+---
+
+关于斜体强调与加粗强调，`<strong><em>text</em></strong>` 与 `<em><strong>text</strong></em>` 的写法都不被建议。
+因为它们语义都有强调，同时使用会出现语义重复。[^00590]
+
+[^00590]: Jitendra Vyas, _[Does it matter <strong> in <em> or <em> in <strong>?](https://stackoverflow.com/questions/2200590/does-it-matter-strong-in-em-or-em-in-strong)_, Stack Overflow, 2010-02-04. (参照 2024-04-03).
+
+推荐的写法可能是 `<strong style="font-style: italic">text</strong>` 或者 `<i><strong>text</strong></i>` 吧。
+
 ### GWLM 16-xx Admonitions
-
-〔待续〕
-
-### GWLM 16-xx 富文本的复合用法
-
-+   倾斜与加粗
-+   倾斜与超链接
 
 〔待续〕
 
