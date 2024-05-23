@@ -3,7 +3,7 @@
 ```yaml
 标题: 通用写作律法
 创建时间: 2023-08-26
-版本: 0.0.39-beta
+版本: 0.0.40-beta
 ```
 
 《<ruby>通用写作律法<rp>(</rp><rt>General Writing Laws</rt><rp>)</rp></ruby>》是由
@@ -464,16 +464,36 @@ GWLM 0 是收录通用写作律法模块的清单，会收录所有的 GWLM（Ge
 >
 > 这是一句含有 QQ音乐的测试短句。
 
+但是呈现效果不佳，所以可用引号包裹：
+
+> [!note]
+>
+> 这是一句含有「QQ音乐」的测试短句。
+
+之后再次提及时，如果规范要求不严格，可以添加空格，不使用引号：
+
+> [!note]
+>
+> 这是一句含有 QQ 音乐的测试短句。
+
 「�T瓣в变巨肚」是「三國志曹操傳」在 Big5 编码下，被以 GB 解码后呈现的内容，这段内容本身具有唯一性，
 所以不同文字间不应添加空格。
+
+---
+
+还可以参考互联网大厂的写作风格指南：
+
++   [Apple Style Guide](https://support.apple.com/guide/applestyleguide/welcome/web)
++   [Google developer documentation style guide](https://developers.google.com/style)
++   [Microsoft Writing Style Guide](https://learn.microsoft.com/en-us/style-guide/welcome/)
 
 ### GWLM 2-9 国际单位「指北」式修补
 
 《GB 3100—1993 国际单位制及其应用》等规范，均要求数值与单位符号留有适当的空隙，即空格。
 所以为了符合《中文文案排版指北》的写作方案，需要添加一些例外：
 
-+   度数与数值间没有空隙，例如 ° ℃ °C。
-+   百分号、千分号和万分号与数值间没有空隙，例如 % ‰ ‱。<!-- ％ -->
++   度数与数值间没有空隙，例如 °、°C、℃（U+2103）。
++   百分号、千分号和万分号与数值间没有空隙，例如 %、‰、‱。<!-- ％ -->
 
 ## GWLM 3 书写系统规范
 
