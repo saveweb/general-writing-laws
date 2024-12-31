@@ -3,7 +3,7 @@
 ```yaml
 标题: 通用写作律法
 创建时间: 2023-08-26
-版本: 0.0.40-beta
+版本: 0.0.41-beta
 ```
 
 《<ruby>通用写作律法<rp>(</rp><rt>General Writing Laws</rt><rp>)</rp></ruby>》是由
@@ -481,7 +481,7 @@ GWLM 0 是收录通用写作律法模块的清单，会收录所有的 GWLM（Ge
 
 ---
 
-还可以参考互联网大厂的写作风格指南：
+还可以参考互联网大厂的写作风格指南，其中有一些对名词拼写的要求规范：
 
 +   [Apple Style Guide](https://support.apple.com/guide/applestyleguide/welcome/web)
 +   [Google developer documentation style guide](https://developers.google.com/style)
@@ -492,7 +492,7 @@ GWLM 0 是收录通用写作律法模块的清单，会收录所有的 GWLM（Ge
 《GB 3100—1993 国际单位制及其应用》等规范，均要求数值与单位符号留有适当的空隙，即空格。
 所以为了符合《中文文案排版指北》的写作方案，需要添加一些例外：
 
-+   度数与数值间没有空隙，例如 °、°C、℃（U+2103）。
++   度数与数值间没有空隙，例如 °、℃、°C。
 +   百分号、千分号和万分号与数值间没有空隙，例如 %、‰、‱。<!-- ％ -->
 
 ## GWLM 3 书写系统规范
@@ -907,7 +907,7 @@ Markdown 在使用 [内联代码](https://spec.commonmark.org/0.30/#code-spans)�
 +-------------------------------------------------------------+
 ```
 
-所以不能将使用无衬线字体与 Markdown 代码标记认为是一件事。
+所以不能将使用无衬线字体，与 Markdown 的代码标记，认为是同一件事。
 
 #### GWLM 16-1-2 尺寸
 
@@ -2388,6 +2388,53 @@ moment.updateLocale('zh-cn', {
 
 答案是可以，Windows 的资源管理器（Explorer）能够识别 `.png` 这样的文件为图像。不过受限于大多数文件管理器的算法，
 单纯的 `png` 不会被识别为 `png` 扩展名，而会被识别为文件名称。
+
+## GWLM 21 文件大小
+
+生产内存的公司，一起建立了 [JEDEC 存储器标准][jedec]。该标准借用了国际单位的前置词 kilo-、mega- 和 giga-。
+但 JEDEC 知道国际单位都是十进制，可能引起误会，所以只用大写的简称：KB、MB 和 GB，不使用全称，用这种方法来与十进制区别。
+
+但存储设备制造商显然没有认可 JEDEC 设计的二进制单位，而是使用十进制单位。这也就导致了二者混淆的局面。
+对此，国际电工委员会（IEC）在 1997 年发布了指导标准 [IEC 60027-2][]，重新定义了二进制的单位前缀为 kibi-、mebi- 和 gibi-
+（缩写为 Ki-、Mi- 与 Gi）。从设计的角度来说，这很优美。如果需要，就连二进制的距离，也能用 Kim、Mim 和 Gim 来表示。
+
+下面是国际单位制前缀（SI prefix），以及 JEDEC、IEC 的二进制前缀的数量差异。
+
+| 数量                                | 国际单位制前缀 SI |
+| ----------------------------------- | ----------------- |
+| 1000 (10<sup>3</sup>)               | k (kilo)          |
+| 1000<sup>2</sup> (10<sup>6</sup>)   | M (mega)          |
+| 1000<sup>3</sup> (10<sup>9</sup>)   | G (giga)          |
+| 1000<sup>4</sup> (10<sup>12</sup>)  | T (tera)          |
+| 1000<sup>5</sup> (10<sup>15</sup>)  | P (peta)          |
+| 1000<sup>6</sup> (10<sup>18</sup>)  | E (exa)           |
+| 1000<sup>7</sup> (10<sup>21</sup>)  | Z (zetta)         |
+| 1000<sup>8</sup> (10<sup>24</sup>)  | Y (yotta)         |
+| 1000<sup>9</sup> (10<sup>27</sup>)  | R (ronna)         |
+| 1000<sup>10</sup> (10<sup>30</sup>) | Q (quetta)        |
+
+| 数量                              | IEC       | JEDEC    |
+| --------------------------------- | --------- | -------- |
+| 1024 (2<sup>10</sup>)             | Ki (kibi) | K (kilo) |
+| 1024<sup>2</sup> (2<sup>20</sup>) | Mi (mebi) | M (mega) |
+| 1024<sup>3</sup> (2<sup>30</sup>) | Gi (gibi) | G (giga) |
+| 1024<sup>4</sup> (2<sup>40</sup>) | Ti (tebi) | T (tera) |
+| 1024<sup>5</sup> (2<sup>50</sup>) | Pi (pebi) | null     |
+| 1024<sup>6</sup> (2<sup>60</sup>) | Ei (exbi) | null     |
+| 1024<sup>7</sup> (2<sup>70</sup>) | Zi (zebi) | null     |
+| 1024<sup>8</sup> (2<sup>80</sup>) | Yi (yobi) | null     |
+
+### GWLM 21-1 使用 JEDEC 的规则表示文件大小
+
+1 GB = 1024 MB，不使用 IEC 的写法（如 GiB、MiB）。
+
+### GWLM 21-2 使用 IEC 的规则表示文件大小
+
+1 GiB = 1024 MiB，通常与 SI 规则（GWLM 21-3）搭配使用。
+
+### GWLM 21-3 使用 SI 的规则表示文件大小
+
+1 GB = 1000 MB，通常与 IEC 规则（GWLM 21-2）搭配使用。
 
 ## GWLM 100 连续汉字问题
 
@@ -4124,6 +4171,8 @@ GWLM 15834-4-17 是替代《GB/T 15834—2011 标点符号用法标准》4.17 �
 [GFM]: https://github.github.com/gfm/
 [Halfwidth Left Corner Bracket]: https://web.archive.org/web/20230531223705/https://compart.com/en/unicode/U+FF62
 [hyperlink]: https://en.wikipedia.org/wiki/Hyperlink
+[IEC 60027-2]: https://en.wikipedia.org/wiki/IEC_60027
+[jedec]: https://web.archive.org/web/20080415092730/http://en.wikipedia.org/wiki/JEDEC_memory_standards
 [MeatballWiki]: http://meatballwiki.org/wiki/CharacterFormattingRules
 [RFC 1738]: https://datatracker.ietf.org/doc/html/rfc1738
 [RFC 1866]: https://datatracker.ietf.org/doc/html/rfc1866
